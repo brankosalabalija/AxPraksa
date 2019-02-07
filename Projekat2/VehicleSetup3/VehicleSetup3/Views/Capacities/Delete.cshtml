@@ -1,0 +1,113 @@
+﻿@model VehicleSetup3.Models.Capacity
+
+@{
+    ViewBag.Title = "Delete";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Delete</h2>
+
+<h3>Are you sure you want to delete this?</h3>
+<div>
+    <h4>Capacity</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.Pallets)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Pallets)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Spaces)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Spaces)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.CubicSpace)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.CubicSpace)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.InternalHeight)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.InternalHeight)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.InternalWidht)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.InternalWidht)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.InternalLenght)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.InternalLenght)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Tare)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Tare)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.GVM)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.GVM)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.GCM)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.GCM)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.IsMainCapacity)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.IsMainCapacity)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.FleetAsset.RegistrationNo)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.FleetAsset.RegistrationNo)
+        </dd>
+
+    </dl>
+
+    @using (Html.BeginForm()) {
+        @Html.AntiForgeryToken()
+
+        <div class="form-actions no-color">
+            <input type="submit" value="Delete" class="btn btn-default" /> |
+            @Html.ActionLink("Back to List", "Index")
+        </div>
+    }
+</div>

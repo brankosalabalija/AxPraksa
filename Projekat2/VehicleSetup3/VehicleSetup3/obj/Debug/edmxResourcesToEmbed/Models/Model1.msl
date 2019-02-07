@@ -1,0 +1,194 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="VehicleSetupModelStoreContainer" CdmEntityContainer="VehicleSetupEntities">
+    <EntitySetMapping Name="AdditionalFields">
+      <EntityTypeMapping TypeName="VehicleSetupModel.AdditionalField">
+        <MappingFragment StoreEntitySet="AdditionalFields">
+          <ScalarProperty Name="Value" ColumnName="Value" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+          <ScalarProperty Name="FleetNo" ColumnName="FleetNo" />
+          <ScalarProperty Name="ID" ColumnName="ID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="AssetSubTypes">
+      <EntityTypeMapping TypeName="VehicleSetupModel.AssetSubType">
+        <MappingFragment StoreEntitySet="AssetSubType">
+          <ScalarProperty Name="AssetTypeID" ColumnName="AssetTypeID" />
+          <ScalarProperty Name="SubType" ColumnName="SubType" />
+          <ScalarProperty Name="ID" ColumnName="ID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="AssetTypes">
+      <EntityTypeMapping TypeName="VehicleSetupModel.AssetType">
+        <MappingFragment StoreEntitySet="AssetType">
+          <ScalarProperty Name="IsVehicle" ColumnName="IsVehicle" />
+          <ScalarProperty Name="Type" ColumnName="Type" />
+          <ScalarProperty Name="ID" ColumnName="ID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Attachments">
+      <EntityTypeMapping TypeName="VehicleSetupModel.Attachment">
+        <MappingFragment StoreEntitySet="Attachments">
+          <ScalarProperty Name="IsDefaultImage" ColumnName="IsDefaultImage" />
+          <ScalarProperty Name="Image" ColumnName="Image" />
+          <ScalarProperty Name="Path" ColumnName="Path" />
+          <ScalarProperty Name="Size" ColumnName="Size" />
+          <ScalarProperty Name="Extension" ColumnName="Extension" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+          <ScalarProperty Name="FleetNo" ColumnName="FleetNo" />
+          <ScalarProperty Name="ID" ColumnName="ID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Capacities">
+      <EntityTypeMapping TypeName="VehicleSetupModel.Capacity">
+        <MappingFragment StoreEntitySet="Capacity">
+          <ScalarProperty Name="AxelWeight3" ColumnName="AxelWeight3" />
+          <ScalarProperty Name="AxelWeight2" ColumnName="AxelWeight2" />
+          <ScalarProperty Name="AxelWeight1" ColumnName="AxelWeight1" />
+          <ScalarProperty Name="IsMainCapacity" ColumnName="IsMainCapacity" />
+          <ScalarProperty Name="GCM" ColumnName="GCM" />
+          <ScalarProperty Name="GVM" ColumnName="GVM" />
+          <ScalarProperty Name="Tare" ColumnName="Tare" />
+          <ScalarProperty Name="InternalLenght" ColumnName="InternalLenght" />
+          <ScalarProperty Name="InternalWidht" ColumnName="InternalWidht" />
+          <ScalarProperty Name="InternalHeight" ColumnName="InternalHeight" />
+          <ScalarProperty Name="CubicSpace" ColumnName="CubicSpace" />
+          <ScalarProperty Name="Spaces" ColumnName="Spaces" />
+          <ScalarProperty Name="Pallets" ColumnName="Pallets" />
+          <ScalarProperty Name="FleetNo" ColumnName="FleetNo" />
+          <ScalarProperty Name="ID" ColumnName="ID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Compliences">
+      <EntityTypeMapping TypeName="VehicleSetupModel.Complience">
+        <MappingFragment StoreEntitySet="Complience">
+          <ScalarProperty Name="AlertOperation" ColumnName="AlertOperation" />
+          <ScalarProperty Name="ExpiryDate" ColumnName="ExpiryDate" />
+          <ScalarProperty Name="ValidFromDate" ColumnName="ValidFromDate" />
+          <ScalarProperty Name="DateObtained" ColumnName="DateObtained" />
+          <ScalarProperty Name="LicenseNo" ColumnName="LicenseNo" />
+          <ScalarProperty Name="LicenceClass" ColumnName="LicenceClass" />
+          <ScalarProperty Name="SubTypeID" ColumnName="SubTypeID" />
+          <ScalarProperty Name="ComplienceTypeID" ColumnName="ComplienceTypeID" />
+          <ScalarProperty Name="FleetNo" ColumnName="FleetNo" />
+          <ScalarProperty Name="ID" ColumnName="ID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="ComplienceSubTypes">
+      <EntityTypeMapping TypeName="VehicleSetupModel.ComplienceSubType">
+        <MappingFragment StoreEntitySet="ComplienceSubType">
+          <ScalarProperty Name="Name" ColumnName="Name" />
+          <ScalarProperty Name="ID" ColumnName="ID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="ComplienceTypes">
+      <EntityTypeMapping TypeName="VehicleSetupModel.ComplienceType">
+        <MappingFragment StoreEntitySet="ComplienceType">
+          <ScalarProperty Name="Class" ColumnName="Class" />
+          <ScalarProperty Name="ID" ColumnName="ID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="FleetAssets">
+      <EntityTypeMapping TypeName="VehicleSetupModel.FleetAsset">
+        <MappingFragment StoreEntitySet="FleetAsset">
+          <ScalarProperty Name="FuelTypeID" ColumnName="FuelTypeID" />
+          <ScalarProperty Name="SubTypeID" ColumnName="SubTypeID" />
+          <ScalarProperty Name="TypeID" ColumnName="TypeID" />
+          <ScalarProperty Name="FleetAssetModelID" ColumnName="FleetAssetModelID" />
+          <ScalarProperty Name="FleetAssetMakeID" ColumnName="FleetAssetMakeID" />
+          <ScalarProperty Name="Description" ColumnName="Description" />
+          <ScalarProperty Name="Year" ColumnName="Year" />
+          <ScalarProperty Name="Depot" ColumnName="Depot" />
+          <ScalarProperty Name="RegistrationNo" ColumnName="RegistrationNo" />
+          <ScalarProperty Name="FleetNo" ColumnName="FleetNo" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="FleetAssetMakes">
+      <EntityTypeMapping TypeName="VehicleSetupModel.FleetAssetMake">
+        <MappingFragment StoreEntitySet="FleetAssetMake">
+          <ScalarProperty Name="Manufacturer" ColumnName="Manufacturer" />
+          <ScalarProperty Name="ID" ColumnName="ID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="FleetAssetModels">
+      <EntityTypeMapping TypeName="VehicleSetupModel.FleetAssetModel">
+        <MappingFragment StoreEntitySet="FleetAssetModel">
+          <ScalarProperty Name="FleetAssetMakeID" ColumnName="FleetAssetMakeID" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+          <ScalarProperty Name="ID" ColumnName="ID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="FuelTypes">
+      <EntityTypeMapping TypeName="VehicleSetupModel.FuelType">
+        <MappingFragment StoreEntitySet="FuelType">
+          <ScalarProperty Name="Fuel" ColumnName="Fuel" />
+          <ScalarProperty Name="ID" ColumnName="ID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="AspNetRoles">
+      <EntityTypeMapping TypeName="VehicleSetupModel.AspNetRole">
+        <MappingFragment StoreEntitySet="AspNetRoles">
+          <ScalarProperty Name="Name" ColumnName="Name" />
+          <ScalarProperty Name="Id" ColumnName="Id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="AspNetUserClaims">
+      <EntityTypeMapping TypeName="VehicleSetupModel.AspNetUserClaim">
+        <MappingFragment StoreEntitySet="AspNetUserClaims">
+          <ScalarProperty Name="ClaimValue" ColumnName="ClaimValue" />
+          <ScalarProperty Name="ClaimType" ColumnName="ClaimType" />
+          <ScalarProperty Name="UserId" ColumnName="UserId" />
+          <ScalarProperty Name="Id" ColumnName="Id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="AspNetUserLogins">
+      <EntityTypeMapping TypeName="VehicleSetupModel.AspNetUserLogin">
+        <MappingFragment StoreEntitySet="AspNetUserLogins">
+          <ScalarProperty Name="UserId" ColumnName="UserId" />
+          <ScalarProperty Name="ProviderKey" ColumnName="ProviderKey" />
+          <ScalarProperty Name="LoginProvider" ColumnName="LoginProvider" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="AspNetUsers">
+      <EntityTypeMapping TypeName="VehicleSetupModel.AspNetUser">
+        <MappingFragment StoreEntitySet="AspNetUsers">
+          <ScalarProperty Name="UserName" ColumnName="UserName" />
+          <ScalarProperty Name="AccessFailedCount" ColumnName="AccessFailedCount" />
+          <ScalarProperty Name="LockoutEnabled" ColumnName="LockoutEnabled" />
+          <ScalarProperty Name="LockoutEndDateUtc" ColumnName="LockoutEndDateUtc" />
+          <ScalarProperty Name="TwoFactorEnabled" ColumnName="TwoFactorEnabled" />
+          <ScalarProperty Name="PhoneNumberConfirmed" ColumnName="PhoneNumberConfirmed" />
+          <ScalarProperty Name="PhoneNumber" ColumnName="PhoneNumber" />
+          <ScalarProperty Name="SecurityStamp" ColumnName="SecurityStamp" />
+          <ScalarProperty Name="PasswordHash" ColumnName="PasswordHash" />
+          <ScalarProperty Name="EmailConfirmed" ColumnName="EmailConfirmed" />
+          <ScalarProperty Name="Email" ColumnName="Email" />
+          <ScalarProperty Name="Id" ColumnName="Id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <AssociationSetMapping Name="AspNetUserRoles" TypeName="VehicleSetupModel.AspNetUserRoles" StoreEntitySet="AspNetUserRoles">
+      <EndProperty Name="AspNetUser">
+        <ScalarProperty Name="Id" ColumnName="UserId" />
+      </EndProperty>
+      <EndProperty Name="AspNetRole">
+        <ScalarProperty Name="Id" ColumnName="RoleId" />
+      </EndProperty>
+    </AssociationSetMapping>
+  </EntityContainerMapping>
+</Mapping>

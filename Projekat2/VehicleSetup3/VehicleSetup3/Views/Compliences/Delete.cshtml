@@ -1,0 +1,97 @@
+﻿@model VehicleSetup3.Models.Complience
+
+@{
+    ViewBag.Title = "Delete";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Delete</h2>
+
+<h3>Are you sure you want to delete this?</h3>
+<div>
+    <h4>Complience</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.LicenceClass)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.LicenceClass)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.LicenseNo)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.LicenseNo)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.DateObtained)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.DateObtained)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.ValidFromDate)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.ValidFromDate)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.ExpiryDate)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.ExpiryDate)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.AlertOperation)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.AlertOperation)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.ComplienceSubType.Name)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.ComplienceSubType.Name)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.ComplienceType.Class)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.ComplienceType.Class)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.FleetAsset.RegistrationNo)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.FleetAsset.RegistrationNo)
+        </dd>
+
+    </dl>
+
+    @using (Html.BeginForm()) {
+        @Html.AntiForgeryToken()
+
+        <div class="form-actions no-color">
+            <input type="submit" value="Delete" class="btn btn-default" /> |
+            @Html.ActionLink("Back to List", "Index")
+        </div>
+    }
+</div>

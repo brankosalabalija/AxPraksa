@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="8f978834c4b24aa897d250abaa952438" Name="Diagram1" ZoomLevel="88">
+        <EntityTypeShape EntityType="VehicleSetupModel.AdditionalField" Width="1.5" PointX="7.5" PointY="14.875" />
+        <EntityTypeShape EntityType="VehicleSetupModel.AssetSubType" Width="1.5" PointX="3" PointY="7.5" />
+        <EntityTypeShape EntityType="VehicleSetupModel.AssetType" Width="1.5" PointX="0.75" PointY="7.5" />
+        <EntityTypeShape EntityType="VehicleSetupModel.Attachment" Width="1.5" PointX="7.5" PointY="11.75" />
+        <EntityTypeShape EntityType="VehicleSetupModel.Capacity" Width="1.5" PointX="7.5" PointY="7.625" />
+        <EntityTypeShape EntityType="VehicleSetupModel.Complience" Width="1.5" PointX="7.5" PointY="3.875" />
+        <EntityTypeShape EntityType="VehicleSetupModel.ComplienceSubType" Width="1.5" PointX="5.25" PointY="3.625" />
+        <EntityTypeShape EntityType="VehicleSetupModel.ComplienceType" Width="1.5" PointX="5.25" PointY="0.75" />
+        <EntityTypeShape EntityType="VehicleSetupModel.FleetAsset" Width="1.5" PointX="5.25" PointY="6.5" />
+        <EntityTypeShape EntityType="VehicleSetupModel.FleetAssetMake" Width="1.5" PointX="3.125" PointY="12.75" />
+        <EntityTypeShape EntityType="VehicleSetupModel.FleetAssetModel" Width="1.5" PointX="0.75" PointY="11.75" />
+        <EntityTypeShape EntityType="VehicleSetupModel.FuelType" Width="1.5" PointX="3" PointY="5.375" />
+        <EntityTypeShape EntityType="VehicleSetupModel.AccredDriverView" Width="1.5" PointX="22.25" PointY="1" />
+        <EntityTypeShape EntityType="VehicleSetupModel.AccredSubcontView" Width="1.5" PointX="16" PointY="1.125" />
+        <EntityTypeShape EntityType="VehicleSetupModel.AccredTrailerView" Width="1.5" PointX="16" PointY="3.875" />
+        <EntityTypeShape EntityType="VehicleSetupModel.InductionDriverView" Width="1.5" PointX="22.25" PointY="4.125" />
+        <EntityTypeShape EntityType="VehicleSetupModel.InductionSubcontractorView" Width="1.5" PointX="24" PointY="1" />
+        <EntityTypeShape EntityType="VehicleSetupModel.InsuranceView" Width="1.5" PointX="18" PointY="1.125" />
+        <EntityTypeShape EntityType="VehicleSetupModel.LicenceView" Width="1.5" PointX="18" PointY="3.875" />
+        <EntityTypeShape EntityType="VehicleSetupModel.RatingTrailerView" Width="1.5" PointX="24.25" PointY="4" />
+        <EntityTypeShape EntityType="VehicleSetupModel.RatingVehicleView" Width="1.5" PointX="26.125" PointY="1.125" />
+        <EntityTypeShape EntityType="VehicleSetupModel.RegTrailerView" Width="1.5" PointX="20" PointY="1.125" />
+        <EntityTypeShape EntityType="VehicleSetupModel.RegVehicleView" Width="1.5" PointX="20.125" PointY="4" />
+        <AssociationConnector Association="VehicleSetupModel.FK_AdditionalFields_Details" />
+        <AssociationConnector Association="VehicleSetupModel.FK_AssetSubType_AssetType" />
+        <AssociationConnector Association="VehicleSetupModel.FK_Details_AssetSubType" />
+        <AssociationConnector Association="VehicleSetupModel.FK_Details_AssetType" />
+        <AssociationConnector Association="VehicleSetupModel.FK_Attachments_Details" />
+        <AssociationConnector Association="VehicleSetupModel.FK_Capacity_Details" />
+        <AssociationConnector Association="VehicleSetupModel.FK_Complience_ComplienceSubType" />
+        <AssociationConnector Association="VehicleSetupModel.FK_Complience_ComplienceType" />
+        <AssociationConnector Association="VehicleSetupModel.FK_Complience_Details" />
+        <AssociationConnector Association="VehicleSetupModel.FK_Details_FleetAssetMake" />
+        <AssociationConnector Association="VehicleSetupModel.FK_Details_FleetAssetModel" />
+        <AssociationConnector Association="VehicleSetupModel.FK_Details_FuelType" />
+        <AssociationConnector Association="VehicleSetupModel.FK_FleetAssetModel_FleetAssetMake" />
+        <EntityTypeShape EntityType="VehicleSetupModel.AspNetRole" Width="1.5" PointX="10.375" PointY="2.375" />
+        <EntityTypeShape EntityType="VehicleSetupModel.AspNetUserClaim" Width="1.5" PointX="14.875" PointY="1" />
+        <EntityTypeShape EntityType="VehicleSetupModel.AspNetUserLogin" Width="1.5" PointX="14.875" PointY="3.5" />
+        <EntityTypeShape EntityType="VehicleSetupModel.AspNetUser" Width="1.5" PointX="12.625" PointY="1.375" />
+        <AssociationConnector Association="VehicleSetupModel.FK_dbo_AspNetUserClaims_dbo_AspNetUsers_UserId" />
+        <AssociationConnector Association="VehicleSetupModel.FK_dbo_AspNetUserLogins_dbo_AspNetUsers_UserId" />
+        <AssociationConnector Association="VehicleSetupModel.AspNetUserRoles" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>

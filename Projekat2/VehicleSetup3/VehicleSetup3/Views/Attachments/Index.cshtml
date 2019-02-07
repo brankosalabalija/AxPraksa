@@ -1,0 +1,70 @@
+﻿@model IEnumerable<VehicleSetup3.Models.Attachment>
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Index</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.Name)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Extension)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Size)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Path)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Image)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.IsDefaultImage)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.FleetAsset.RegistrationNo)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.Name)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Extension)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Size)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Path)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Image)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.IsDefaultImage)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.FleetAsset.RegistrationNo)
+        </td>
+        <td>
+            @Html.ActionLink(" ", "Edit", new { id = item.ID }, new { @class = "btn btn-secondary glyphicon glyphicon-cog" }) |
+            @Html.ActionLink(" ", "Details", new { id = item.ID }, new { @class = "btn btn-info glyphicon glyphicon-list" }) |
+            @Html.ActionLink(" ", "Delete", new { id = item.ID }, new { @class = "btn btn-danger glyphicon glyphicon-trash" })
+        </td>
+    </tr>
+}
+
+</table>

@@ -1,0 +1,107 @@
+﻿@model VehicleSetup3.Models.Capacity
+
+@{
+    ViewBag.Title = "Details";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>Capacity</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.Pallets)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Pallets)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Spaces)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Spaces)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.CubicSpace)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.CubicSpace)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.InternalHeight)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.InternalHeight)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.InternalWidht)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.InternalWidht)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.InternalLenght)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.InternalLenght)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Tare)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Tare)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.GVM)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.GVM)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.GCM)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.GCM)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.IsMainCapacity)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.IsMainCapacity)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.FleetAsset.RegistrationNo)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.FleetAsset.RegistrationNo)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.ID }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

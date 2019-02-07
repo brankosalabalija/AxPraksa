@@ -1,0 +1,365 @@
+﻿@model VehicleSetup3.Models.FABLists
+
+@{
+    ViewBag.Title = "Details";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>FleetAsset</h4>
+    <hr />
+
+    <ul class="nav nav-tabs">
+        <li>
+            <a class="nav-link" data-toggle="tab" href="#FleetAsset">Fleet Assets</a>
+        </li>
+        <li>
+            <a class="nav-link" data-toggle="tab" href="#Capacity">Capacity</a>
+        </li>
+        <li>
+            <a class="nav-link" data-toggle="tab" href="#Complience">Complience</a>
+        </li>
+        <li>
+            <a class="nav-link" data-toggle="tab" href="#AdditonalFields">AdditonalFields</a>
+        </li>
+        <li>
+            <a class="nav-link" data-toggle="tab" href="#Attachments">Attachments</a>
+        </li>
+
+
+
+    </ul>
+    <div class="form-group">
+        <div class="tab-content">
+            <div class="tab-pane fade active" id="FleetAsset">
+                <dl class="dl-horizontal">
+                    <dt>
+                        @Html.DisplayNameFor(model => model.fa.RegistrationNo)
+                    </dt>
+
+                    <dd>
+                        @Html.DisplayFor(model => model.fa.RegistrationNo)
+                    </dd>
+
+                    <dt>
+                        @Html.DisplayNameFor(model => model.fa.Depot)
+                    </dt>
+
+                    <dd>
+                        @Html.DisplayFor(model => model.fa.Depot)
+                    </dd>
+
+                    <dt>
+                        @Html.DisplayNameFor(model => model.fa.Year)
+                    </dt>
+
+                    <dd>
+                        @Html.DisplayFor(model => model.fa.Year)
+                    </dd>
+
+                    <dt>
+                        @Html.DisplayNameFor(model => model.fa.Description)
+                    </dt>
+
+                    <dd>
+                        @Html.DisplayFor(model => model.fa.Description)
+                    </dd>
+
+                    <dt>
+                        @Html.DisplayNameFor(model => model.fa.AssetSubType.SubType)
+                    </dt>
+
+                    <dd>
+                        @Html.DisplayFor(model => model.fa.AssetSubType.SubType)
+                    </dd>
+
+                    <dt>
+                        @Html.DisplayNameFor(model => model.fa.AssetType.Type)
+                    </dt>
+
+                    <dd>
+                        @Html.DisplayFor(model => model.fa.AssetType.Type)
+                    </dd>
+
+                    <dt>
+                        @Html.DisplayNameFor(model => model.fa.FleetAssetMake.Manufacturer)
+                    </dt>
+
+                    <dd>
+                        @Html.DisplayFor(model => model.fa.FleetAssetMake.Manufacturer)
+                    </dd>
+
+                    <dt>
+                        @Html.DisplayNameFor(model => model.fa.FleetAssetModel.Name)
+                    </dt>
+
+                    <dd>
+                        @Html.DisplayFor(model => model.fa.FleetAssetModel.Name)
+                    </dd>
+
+                    <dt>
+                        @Html.DisplayNameFor(model => model.fa.FuelType.Fuel)
+                    </dt>
+
+                    <dd>
+                        @Html.DisplayFor(model => model.fa.FuelType.Fuel)
+                    </dd>
+                </dl>
+            </div>
+            <div id="Complience" class="tab-pane fade">
+                @foreach (var item in Model.cl)
+                {
+                <dl class="dl-horizontal">
+
+                    <dt>
+                        @Html.DisplayNameFor(modelItem => item.ComplienceSubType.Name)
+                    </dt>
+
+                    <dd>
+                        @Html.DisplayFor(modelItem => item.ComplienceSubType.Name)
+                    </dd>
+
+                    <dt>
+                        @Html.DisplayNameFor(modelItem => item.ComplienceType.Class)
+                    </dt>
+
+                    <dd>
+                        @Html.DisplayFor(modelItem => item.ComplienceType.Class)
+                    </dd>
+
+                    <dt>
+                        @Html.DisplayNameFor(modelItem => item.LicenceClass)
+                    </dt>
+
+                    <dd>
+                        @Html.DisplayFor(modelItem => item.LicenceClass)
+                    </dd>
+
+                    <dt>
+                        @Html.DisplayNameFor(modelItem => item.LicenseNo)
+                    </dt>
+
+                    <dd>
+                        @Html.DisplayFor(modelItem => item.LicenseNo)
+                    </dd>
+
+                    <dt>
+                        @Html.DisplayNameFor(modelItem => item.DateObtained)
+                    </dt>
+
+                    <dd>
+                        @Html.DisplayFor(modelItem => item.DateObtained)
+                    </dd>
+
+                    <dt>
+                        @Html.DisplayNameFor(modelItem => item.ValidFromDate)
+                    </dt>
+
+                    <dd>
+                        @Html.DisplayFor(modelItem => item.ValidFromDate)
+                    </dd>
+
+                    <dt>
+                        @Html.DisplayNameFor(modelItem => item.ExpiryDate)
+                    </dt>
+
+                    <dd>
+                        @Html.DisplayFor(modelItem => item.ExpiryDate)
+                    </dd>
+
+                    <dt>
+                        @Html.DisplayNameFor(modelItem => item.AlertOperation)
+                    </dt>
+
+                    <dd>
+                        @Html.DisplayFor(modelItem => item.AlertOperation)
+                    </dd>
+
+
+                </dl>
+                <hr />
+                }
+            </div>
+            <div id="Capacity" class="tab-pane fade">
+                @foreach (var item in Model.cp)
+                {<dl class="dl-horizontal">
+                    <dt>
+                        @Html.DisplayNameFor(modelItem => item.Pallets)
+                    </dt>
+
+                    <dd>
+                        @Html.DisplayFor(modelItem => item.Pallets)
+                    </dd>
+
+                    <dt>
+                        @Html.DisplayNameFor(modelItem => item.Spaces)
+                    </dt>
+
+                    <dd>
+                        @Html.DisplayFor(modelItem => item.Spaces)
+                    </dd>
+
+                    <dt>
+                        @Html.DisplayNameFor(modelItem => item.CubicSpace)
+                    </dt>
+
+                    <dd>
+                        @Html.DisplayFor(modelItem => item.CubicSpace)
+                    </dd>
+
+                    <dt>
+                        @Html.DisplayNameFor(modelItem => item.InternalHeight)
+                    </dt>
+
+                    <dd>
+                        @Html.DisplayFor(modelItem => item.InternalHeight)
+                    </dd>
+
+                    <dt>
+                        @Html.DisplayNameFor(modelItem => item.InternalWidht)
+                    </dt>
+
+                    <dd>
+                        @Html.DisplayFor(modelItem => item.InternalWidht)
+                    </dd>
+
+                    <dt>
+                        @Html.DisplayNameFor(modelItem => item.InternalLenght)
+                    </dt>
+
+                    <dd>
+                        @Html.DisplayFor(modelItem => item.InternalLenght)
+                    </dd>
+
+                    <dt>
+                        @Html.DisplayNameFor(modelItem => item.Tare)
+                    </dt>
+
+                    <dd>
+                        @Html.DisplayFor(modelItem => item.Tare)
+                    </dd>
+
+                    <dt>
+                        @Html.DisplayNameFor(modelItem => item.GVM)
+                    </dt>
+
+                    <dd>
+                        @Html.DisplayFor(modelItem => item.GVM)
+                    </dd>
+
+                    <dt>
+                        @Html.DisplayNameFor(modelItem => item.GCM)
+                    </dt>
+
+                    <dd>
+                        @Html.DisplayFor(modelItem => item.GCM)
+                    </dd>
+
+                    <dt>
+                        @Html.DisplayNameFor(modelItem => item.IsMainCapacity)
+                    </dt>
+
+                    <dd>
+                        @Html.DisplayFor(modelItem => item.IsMainCapacity)
+                    </dd>
+
+                </dl>
+                <hr />
+                }
+            </div>
+            <div id="AdditonalFields" class="tab-pane fade">
+                @foreach (var item in Model.af)
+                {
+                    <dl class="dl-horizontal">
+                        <dt>
+                            @Html.DisplayNameFor(modelItem => item.Name)
+                        </dt>
+
+                        <dd>
+                            @Html.DisplayFor(modelItem => item.Name)
+                        </dd>
+
+                        <dt>
+                            @Html.DisplayNameFor(modelItem => item.Value)
+                        </dt>
+
+                        <dd>
+                            @Html.DisplayFor(modelItem => item.Value)
+                        </dd>
+
+                    </dl>
+                    <hr />
+                }
+            </div>
+            <div id="Attachments" class="tab-pane fade">
+                @foreach (var item in Model.at)
+                {
+                    <dl class="dl-horizontal">
+                        <dt>
+                            @Html.DisplayNameFor(modelItem => item.Name)
+                        </dt>
+
+                        <dd>
+                            @Html.DisplayFor(modelItem => item.Name)
+                        </dd>
+
+                        <dt>
+                            @Html.DisplayNameFor(modelItem => item.Extension)
+                        </dt>
+
+                        <dd>
+                            @Html.DisplayFor(modelItem => item.Extension)
+                        </dd>
+
+                        <dt>
+                            @Html.DisplayNameFor(modelItem => item.Size)
+                        </dt>
+
+                        <dd>
+                            @Html.DisplayFor(modelItem => item.Size)
+                        </dd>
+
+                        <dt>
+                            @Html.DisplayNameFor(modelItem => item.Path)
+                        </dt>
+
+                        <dd>
+                            @Html.DisplayFor(modelItem => item.Path)
+                        </dd>
+
+                        <dt>
+                            @Html.DisplayNameFor(modelItem => item.Image)
+                        </dt>
+
+                        <dd>
+                            @Html.DisplayFor(modelItem => item.Image)
+                        </dd>
+
+                        <dt>
+                            @Html.DisplayNameFor(modelItem => item.IsDefaultImage)
+                        </dt>
+
+                        <dd>
+                            @Html.DisplayFor(modelItem => item.IsDefaultImage)
+                        </dd>
+
+                        <dt>
+                            @Html.DisplayNameFor(modelItem => item.FleetAsset.RegistrationNo)
+                        </dt>
+
+                        <dd>
+                            @Html.DisplayFor(modelItem => item.FleetAsset.RegistrationNo)
+                        </dd>
+
+                    </dl>
+                }
+            </div>
+        </div>
+    </div>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.fa.FleetNo }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

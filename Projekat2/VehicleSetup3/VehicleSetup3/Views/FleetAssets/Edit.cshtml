@@ -1,0 +1,558 @@
+﻿@model VehicleSetup3.Models.FABLists
+
+@{
+    ViewBag.Title = "Edit";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Edit</h2>
+
+<ul class="nav nav-tabs">
+    <li>
+        <a class="nav-link" data-toggle="tab" href="#FleetAsset">Fleet Assets</a>
+    </li>
+    <li>
+        <a class="nav-link" data-toggle="tab" href="#Capacity"><p id="cplTab">Capacity</p></a>
+    </li>
+    <li>
+        <a class="nav-link" data-toggle="tab" href="#Complience">Complience</a>
+    </li>
+    <li>
+        <a class="nav-link" data-toggle="tab" href="#AdditonalFields">AdditonalFields</a>
+    </li>
+    <li>
+        <a class="nav-link" data-toggle="tab" href="#Attachments">Attachments</a>
+    </li>
+
+</ul>
+
+<div class="form-group">
+    <div class="tab-content">
+        <div class="tab-pane fade active" id="FleetAsset">
+            <h4>FleetAsset</h4>
+            <hr />
+            @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+            <div class="form-group">
+                @Html.LabelFor(model => model.fa.FleetNo, htmlAttributes: new { @class = "control-label col-md-2" })
+                <div class="col-md-10">
+                    @Html.EditorFor(model => model.fa.FleetNo, new { htmlAttributes = new { @class = "form-control" } })
+                    @Html.ValidationMessageFor(model => model.fa.FleetNo, "", new { @class = "text-danger" })
+                </div>
+            </div>
+
+            <div class="form-group">
+                @Html.LabelFor(model => model.fa.RegistrationNo, htmlAttributes: new { @class = "control-label col-md-2" })
+                <div class="col-md-10">
+                    @Html.EditorFor(model => model.fa.RegistrationNo, new { htmlAttributes = new { @class = "form-control" } })
+                    @Html.ValidationMessageFor(model => model.fa.RegistrationNo, "", new { @class = "text-danger" })
+                </div>
+            </div>
+
+            <div class="form-group">
+                @Html.LabelFor(model => model.fa.Depot, htmlAttributes: new { @class = "control-label col-md-2" })
+                <div class="col-md-10">
+                    @Html.EditorFor(model => model.fa.Depot, new { htmlAttributes = new { @class = "form-control" } })
+                    @Html.ValidationMessageFor(model => model.fa.Depot, "", new { @class = "text-danger" })
+                </div>
+            </div>
+
+            <div class="form-group">
+                @Html.LabelFor(model => model.fa.Year, htmlAttributes: new { @class = "control-label col-md-2" })
+                <div class="col-md-10">
+                    @Html.EditorFor(model => model.fa.Year, new { htmlAttributes = new { @class = "form-control" } })
+                    @Html.ValidationMessageFor(model => model.fa.Year, "", new { @class = "text-danger" })
+                </div>
+            </div>
+
+            <div class="form-group">
+                @Html.LabelFor(model => model.fa.Description, htmlAttributes: new { @class = "control-label col-md-2" })
+                <div class="col-md-10">
+                    @Html.EditorFor(model => model.fa.Description, new { htmlAttributes = new { @class = "form-control" } })
+                    @Html.ValidationMessageFor(model => model.fa.Description, "", new { @class = "text-danger" })
+                </div>
+            </div>
+
+            <div class="form-group">
+                @Html.LabelFor(model => model.fa.FleetAssetMakeID, "FleetAssetMakeID", htmlAttributes: new { @class = "control-label col-md-2" })
+                <div class="col-md-10">
+                    @Html.DropDownList("FleetAssetMakeID", null, htmlAttributes: new { @class = "form-control" })
+                    @Html.ValidationMessageFor(model => model.fa.FleetAssetMakeID, "", new { @class = "text-danger" })
+                </div>
+            </div>
+
+            <div class="form-group">
+                @Html.LabelFor(model => model.fa.FleetAssetModelID, "FleetAssetModelID", htmlAttributes: new { @class = "control-label col-md-2" })
+                <div class="col-md-10">
+                    @Html.DropDownList("FleetAssetModelID", null, htmlAttributes: new { @class = "form-control" })
+                    @Html.ValidationMessageFor(model => model.fa.FleetAssetModelID, "", new { @class = "text-danger" })
+                </div>
+            </div>
+
+            <div class="form-group">
+                @Html.LabelFor(model => model.fa.TypeID, "TypeID", htmlAttributes: new { @class = "control-label col-md-2" })
+                <div class="col-md-10">
+                    @Html.DropDownList("TypeID", null, htmlAttributes: new { @class = "form-control" })
+                    @Html.ValidationMessageFor(model => model.fa.TypeID, "", new { @class = "text-danger" })
+                </div>
+            </div>
+
+            <div class="form-group">
+                @Html.LabelFor(model => model.fa.SubTypeID, "SubTypeID", htmlAttributes: new { @class = "control-label col-md-2" })
+                <div class="col-md-10">
+                    @Html.DropDownList("SubTypeID", null, htmlAttributes: new { @class = "form-control" })
+                    @Html.ValidationMessageFor(model => model.fa.SubTypeID, "", new { @class = "text-danger" })
+                </div>
+            </div>
+
+            <div class="form-group">
+                @Html.LabelFor(model => model.fa.FuelTypeID, "FuelTypeID", htmlAttributes: new { @class = "control-label col-md-2" })
+                <div class="col-md-10">
+                    @Html.DropDownList("FuelTypeID", null, htmlAttributes: new { @class = "form-control" })
+                    @Html.ValidationMessageFor(model => model.fa.FuelTypeID, "", new { @class = "text-danger" })
+                </div>
+            </div>
+        </div>
+        <div class="tab-pane fade" id="Capacity">
+            <h4>Capacity</h4>
+            <hr />
+
+            @Html.HiddenFor(model => model.fa.FleetNo)
+
+            @foreach (var item in Model.cp)
+            {
+                <div id="cpContent">
+                    @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+                    <div class="form-group">
+                        @Html.LabelFor(modelItem => item.Pallets, htmlAttributes: new { @class = "control-label col-md-2" })
+                        <div class="col-md-10">
+                            @Html.EditorFor(modelItem => item.Pallets, new { htmlAttributes = new { @class = "form-control" } })
+                            @Html.ValidationMessageFor(modelItem => item.Pallets, "", new { @class = "text-danger" })
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        @Html.LabelFor(modelItem => item.Spaces, htmlAttributes: new { @class = "control-label col-md-2" })
+                        <div class="col-md-10">
+                            @Html.EditorFor(modelItem => item.Spaces, new { htmlAttributes = new { @class = "form-control" } })
+                            @Html.ValidationMessageFor(modelItem => item.Spaces, "", new { @class = "text-danger" })
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        @Html.LabelFor(modelItem => item.CubicSpace, htmlAttributes: new { @class = "control-label col-md-2" })
+                        <div class="col-md-10">
+                            @Html.EditorFor(modelItem => item.CubicSpace, new { htmlAttributes = new { @class = "form-control" } })
+                            @Html.ValidationMessageFor(modelItem => item.CubicSpace, "", new { @class = "text-danger" })
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        @Html.LabelFor(modelItem => item.InternalHeight, htmlAttributes: new { @class = "control-label col-md-2" })
+                        <div class="col-md-10">
+                            @Html.EditorFor(modelItem => item.InternalHeight, new { htmlAttributes = new { @class = "form-control" } })
+                            @Html.ValidationMessageFor(modelItem => item.InternalHeight, "", new { @class = "text-danger" })
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        @Html.LabelFor(modelItem => item.InternalWidht, htmlAttributes: new { @class = "control-label col-md-2" })
+                        <div class="col-md-10">
+                            @Html.EditorFor(modelItem => item.InternalWidht, new { htmlAttributes = new { @class = "form-control" } })
+                            @Html.ValidationMessageFor(modelItem => item.InternalWidht, "", new { @class = "text-danger" })
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        @Html.LabelFor(modelItem => item.InternalLenght, htmlAttributes: new { @class = "control-label col-md-2" })
+                        <div class="col-md-10">
+                            @Html.EditorFor(modelItem => item.InternalLenght, new { htmlAttributes = new { @class = "form-control" } })
+                            @Html.ValidationMessageFor(modelItem => item.InternalLenght, "", new { @class = "text-danger" })
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        @Html.LabelFor(modelItem => item.Tare, htmlAttributes: new { @class = "control-label col-md-2" })
+                        <div class="col-md-10">
+                            @Html.EditorFor(modelItem => item.Tare, new { htmlAttributes = new { @class = "form-control" } })
+                            @Html.ValidationMessageFor(modelItem => item.Tare, "", new { @class = "text-danger" })
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        @Html.LabelFor(modelItem => item.GVM, htmlAttributes: new { @class = "control-label col-md-2" })
+                        <div class="col-md-10">
+                            @Html.EditorFor(modelItem => item.GVM, new { htmlAttributes = new { @class = "form-control" } })
+                            @Html.ValidationMessageFor(modelItem => item.GVM, "", new { @class = "text-danger" })
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        @Html.LabelFor(modelItem => item.GCM, htmlAttributes: new { @class = "control-label col-md-2" })
+                        <div class="col-md-10">
+                            @Html.EditorFor(modelItem => item.GCM, new { htmlAttributes = new { @class = "form-control" } })
+                            @Html.ValidationMessageFor(modelItem => item.GCM, "", new { @class = "text-danger" })
+                        </div>
+                    </div>
+
+
+                    <div class="form-group">
+                        @Html.LabelFor(modelItem => item.AxelWeight1, htmlAttributes: new { @class = "control-label col-md-2" })
+                        <div class="col-md-10">
+                            @Html.EditorFor(modelItem => item.AxelWeight1, new { htmlAttributes = new { @class = "form-control" } })
+                            @Html.ValidationMessageFor(modelItem => item.AxelWeight1, "", new { @class = "text-danger" })
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        @Html.LabelFor(modelItem => item.AxelWeight2, htmlAttributes: new { @class = "control-label col-md-2" })
+                        <div class="col-md-10">
+                            @Html.EditorFor(modelItem => item.AxelWeight2, new { htmlAttributes = new { @class = "form-control" } })
+                            @Html.ValidationMessageFor(modelItem => item.AxelWeight2, "", new { @class = "text-danger" })
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        @Html.LabelFor(modelItem => item.AxelWeight3, htmlAttributes: new { @class = "control-label col-md-2" })
+                        <div class="col-md-10">
+                            @Html.EditorFor(modelItem => item.AxelWeight3, new { htmlAttributes = new { @class = "form-control" } })
+                            @Html.ValidationMessageFor(modelItem => item.AxelWeight3, "", new { @class = "text-danger" })
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        @Html.LabelFor(modelItem => item.IsMainCapacity, htmlAttributes: new { @class = "control-label col-md-2" })
+                        <div class="col-md-10">
+                            <div class="checkbox">
+                                @Html.EditorFor(modelItem => item.IsMainCapacity)
+                                @Html.ValidationMessageFor(modelItem => item.IsMainCapacity, "", new { @class = "text-danger" })
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            <br />
+            <br />
+            }
+
+        </div>
+        <div id="Complience" class="tab-pane fade">
+            <h4>Complience</h4>
+            <hr />
+            @Html.HiddenFor(model => model.fa.FleetNo)
+
+            @foreach (var item in Model.cl)
+            {
+                <div id="cplContent">
+                    @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+
+
+                    <div class="form-group">
+                        @Html.LabelFor(model => item.ComplienceTypeID, htmlAttributes: new { @class = "control-label col-md-2" })
+                        <div class="col-md-10">
+                            @Html.EditorFor(modelItem => item.ComplienceType.Class, new { htmlAttributes = new { @class = "form-control" } })
+                            @Html.ValidationMessageFor(modelItem => item.ComplienceType.Class, "", new { @class = "text-danger" })
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        @Html.LabelFor(model => item.SubTypeID, htmlAttributes: new { @class = "control-label col-md-2 disabled" })
+                        <div class="col-md-10 ">
+                            @Html.EditorFor(modelItem => item.ComplienceSubType.Name, new { htmlAttributes = new { @class = "form-control disabled" } })
+                            @Html.ValidationMessageFor(modelItem => item.ComplienceSubType.Name, "", new { @class = "text-danger" })
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        @Html.LabelFor(modelItem => item.LicenceClass, htmlAttributes: new { @class = "control-label col-md-2" })
+                        <div class="col-md-10">
+                            @Html.EditorFor(modelItem => item.LicenceClass, new { htmlAttributes = new { @class = "form-control" } })
+                            @Html.ValidationMessageFor(modelItem => item.LicenceClass, "", new { @class = "text-danger" })
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        @Html.LabelFor(modelItem => item.LicenseNo, htmlAttributes: new { @class = "control-label col-md-2" })
+                        <div class="col-md-10">
+                            @Html.EditorFor(modelItem => item.LicenseNo, new { htmlAttributes = new { @class = "form-control" } })
+                            @Html.ValidationMessageFor(modelItem => item.LicenseNo, "", new { @class = "text-danger" })
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        @Html.LabelFor(modelItem => item.DateObtained, htmlAttributes: new { @class = "control-label col-md-2" })
+                        <div class="col-md-10">
+                            @Html.EditorFor(modelItem => item.DateObtained, new { htmlAttributes = new { @class = "form-control" } })
+                            @Html.ValidationMessageFor(modelItem => item.DateObtained, "", new { @class = "text-danger" })
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        @Html.LabelFor(modelItem => item.ValidFromDate, htmlAttributes: new { @class = "control-label col-md-2" })
+                        <div class="col-md-10">
+                            @Html.EditorFor(modelItem => item.ValidFromDate, new { htmlAttributes = new { @class = "form-control" } })
+                            @Html.ValidationMessageFor(modelItem => item.ValidFromDate, "", new { @class = "text-danger" })
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        @Html.LabelFor(modelItem => item.ExpiryDate, htmlAttributes: new { @class = "control-label col-md-2" })
+                        <div class="col-md-10">
+                            @Html.EditorFor(modelItem => item.ExpiryDate, new { htmlAttributes = new { @class = "form-control" } })
+                            @Html.ValidationMessageFor(modelItem => item.ExpiryDate, "", new { @class = "text-danger" })
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        @Html.LabelFor(modelItem => item.AlertOperation, htmlAttributes: new { @class = "control-label col-md-2" })
+                        <div class="col-md-10">
+                            @Html.EditorFor(modelItem => item.AlertOperation, new { htmlAttributes = new { @class = "form-control" } })
+                            @Html.ValidationMessageFor(modelItem => item.AlertOperation, "", new { @class = "text-danger" })
+                        </div>
+                    </div>
+                </div>
+            <br />
+            <br />
+
+            }
+
+        </div>
+        <div id="AdditonalFields" class="tab-pane fade">
+            <h4>AdditonalFields</h4>
+            <hr />
+            @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+
+
+            @Html.HiddenFor(model => model.fa.FleetNo)
+
+            @foreach (var item in Model.af)
+            {
+                <div id="afContent">
+                    <div class="form-group">
+                        @Html.LabelFor(modelItem => item.Name, htmlAttributes: new { @class = "control-label col-md-2" })
+                        <div class="col-md-10">
+                            @Html.EditorFor(modelItem => item.Name, new { htmlAttributes = new { @class = "form-control" } })
+                            @Html.ValidationMessageFor(modelItem => item.Name, "", new { @class = "text-danger" })
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        @Html.LabelFor(modelItem => item.Value, htmlAttributes: new { @class = "control-label col-md-2" })
+                        <div class="col-md-10">
+                            @Html.EditorFor(modelItem => item.Value, new { htmlAttributes = new { @class = "form-control" } })
+                            @Html.ValidationMessageFor(modelItem => item.Value, "", new { @class = "text-danger" })
+                        </div>
+                    </div>
+                </div>
+            <hr />
+            <hr />
+            }
+
+        </div>
+        <div id="Attachments" class="tab-pane fade">
+            <h4>Attachment</h4>
+            <hr />
+            @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+
+            @foreach (var item in Model.at)
+            {
+            <div id="atContent">
+                <div class="form-group">
+                    @Html.LabelFor(modelItem => item.Name, htmlAttributes: new { @class = "control-label col-md-2" })
+                    <div class="col-md-10">
+                        @Html.EditorFor(modelItem => item.Name, new { htmlAttributes = new { @class = "form-control" } })
+                        @Html.ValidationMessageFor(modelItem => item.Name, "", new { @class = "text-danger" })
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    @Html.LabelFor(modelItem => item.Extension, htmlAttributes: new { @class = "control-label col-md-2" })
+                    <div class="col-md-10">
+                        @Html.EditorFor(modelItem => item.Extension, new { htmlAttributes = new { @class = "form-control" } })
+                        @Html.ValidationMessageFor(modelItem => item.Extension, "", new { @class = "text-danger" })
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    @Html.LabelFor(modelItem => item.Size, htmlAttributes: new { @class = "control-label col-md-2" })
+                    <div class="col-md-10">
+                        @Html.EditorFor(modelItem => item.Size, new { htmlAttributes = new { @class = "form-control" } })
+                        @Html.ValidationMessageFor(modelItem => item.Size, "", new { @class = "text-danger" })
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    @Html.LabelFor(modelItem => item.Path, htmlAttributes: new { @class = "control-label col-md-2" })
+                    <div class="col-md-10">
+                        @Html.EditorFor(modelItem => item.Path, new { htmlAttributes = new { @class = "form-control" } })
+                        @Html.ValidationMessageFor(modelItem => item.Path, "", new { @class = "text-danger" })
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    @Html.LabelFor(modelItem => item.Image, htmlAttributes: new { @class = "control-label col-md-2" })
+                    <div class="col-md-10">
+                        @Html.EditorFor(modelItem => item.Image, new { htmlAttributes = new { @class = "form-control" } })
+                        @Html.ValidationMessageFor(modelItem => item.Image, "", new { @class = "text-danger" })
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    @Html.LabelFor(modelItem => item.IsDefaultImage, htmlAttributes: new { @class = "control-label col-md-2" })
+                    <div class="col-md-10">
+                        <div class="checkbox">
+                            @Html.EditorFor(modelItem => item.IsDefaultImage)
+                            @Html.ValidationMessageFor(modelItem => item.IsDefaultImage, "", new { @class = "text-danger" })
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <br />
+            <br />
+            }
+            </div>
+    </div>
+</div>
+<div class="form-group">
+    <div class="col-md-offset-2 col-md-10">
+        <input type="button" value="Edit" id="Save" class="btn btn-success" />
+    </div>
+</div>
+<div class="form-group">
+    @Html.ActionLink(" ", "Index", new { }, new { @class = "btn btn-default glyphicon glyphicon-backward", @title = "Nazad" })
+</div>
+
+@section Scripts {
+    @Scripts.Render("~/bundles/jqueryval")
+    <script>
+        $(document).ready(function () {
+
+            //Dugme Save
+            $('#Save').click(function () {
+                //FleetAsset
+                $.ajax({
+                    url: '/FleetAssets/Edit/' + $('#fa_FleetNo').val(),
+                    type: 'POST',
+                    datatype: 'json',
+                    data: {
+                        FleetNo: $('#fa_FleetNo').val(),
+                        RegistrationNo: $('#fa_RegistrationNo').val(),
+                        Depot: $('#fa_Depot').val(),
+                        Year: $('#fa_Year').val(),
+                        Description: $('#fa_Description').val(),
+                        FleetAssetMakeID: $('#FleetAssetMakeID').val(),
+                        FleetAssetModelID: $('#FleetAssetModelID').val(),
+                        TypeID: $('#TypeID').val(),
+                        SubTypeID: $('#SubTypeID').val(),
+                        FuelTypeID: $('#FuelTypeID').val(),
+                    },
+                    success: function (data, status, xhr) {
+
+                        //Capacity
+                        $("div").each(function (index) {
+                            if ($(this).is("#cpContent")) {
+                                $.ajax({
+                                    url: '/Capacities/Edit/' + $('#ID').val(),
+                                    type: 'POST',
+                                    datatype: 'json',
+                                    data: {
+                                        ID: $('#ID').val,
+                                        FleetNo: $('#fa_FleetNo').val(),
+                                        Pallets: $('#Pallets').val(),
+                                        Spaces: $('#Spaces').val(),
+                                        CubicSpace: $('#CubicSpaces').val(),
+                                        InternalHeight: $('#InternalHeight').val(),
+                                        InternalWidth: $('#InternalWidth').val(),
+                                        InternalLenght: $('#InternalLenght').val(),
+                                        Tare: $('#Tare').val(),
+                                        GVM: $('#GVM').val(),
+                                        GCM: $('#GCM').val(),
+                                        IsMainCapacity: $('#IsMainCapacity').is(":checked").valueOf(),
+                                        AxelWeight1: $('#AxelWeight1').val(),
+                                        AxelWeight2: $('#AxelWeight2').val(),
+                                        AxelWeight3: $('#AxelWeight3').val(),
+                                    },
+                                    success: function (data, status, xhr) {
+
+                                    },
+                                    error: function (jqXhr, textStatus, errorMessage) {
+                                        alert("Nije uneseno u tabelu Capacity:\n" + errorMessage);
+                                    }
+                                })
+                            }
+                        //Compliences
+                            if ($(this).is("#cplContent")) {
+                                $.ajax({
+                                    url: '/Compliences/Edit/' + $('#ID').val(),
+                                    type: 'POST',
+                                    datatype: 'json',
+                                    data: {
+                                        ID: $('#ID').val,
+                                        FleetNo: $('#fa_FleetNo').val(),
+                                        LicenceClass: $('#LicenceClass').val(),
+                                        LicenceNo: $('#LicenceNo').val(),
+                                        DateObtained: $('#DateObtained').val(),
+                                        ValidFromDate: $('#ValidFromDate').val(),
+                                        ExpiriyDate: $('#ExpiriyDate').val(),
+                                        AllertOperation: $('#AllertOperation').val(),
+                                    },
+                                    success: function (data, status, xhr) {
+
+                                    },
+                                    error: function (jqXhr, textStatus, errorMessage) {
+                                        alert("Nije uneseno u tabelu Complience:\n" + errorMessage);
+                                    }
+                                })
+                            }
+                        //AdditionalFields
+                            if ($(this).is("#afContent")) {
+                                $.ajax({
+                                    url: '/AdditionalFields/Edit/' + $('#ID').val(),
+                                    type: 'POST',
+                                    datatype: 'json',
+                                    data: {
+                                        ID: $('#ID').val,
+                                        FleetNo: $('#fa_FleetNo').val(),
+                                        Name: $("#AdditionalFieldName").val(),
+                                        Value: $("#AdditionalFieldValue").val(),
+                                    },
+                                    success: function (data, status, xhr) {
+
+                                    },
+                                    error: function (jqXhr, textStatus, errorMessage) {
+                                        alert("Nije uneseno u tabelu AdditionalFields:\n" + errorMessage);
+                                    }
+                                })
+                            }
+                        //Attachment
+                            if ($(this).is("#atContent")) {
+                                $.ajax({
+                                    url: '/Attachments/Edit/' + $('#ID').val(),
+                                    type: 'POST',
+                                    datatype: 'json',
+                                    data: {
+                                        ID: $('#ID').val(),
+                                        FleetNo: $('#FleetNo').val(),
+                                        Name: $('#AttachmentName').val(),
+                                        Extension: $('#AttachmentExtension').val(),
+                                        Size: $('#AttachmentSize').val(),
+                                        Path: $('#AttachmentPath').val(),
+                                        IsDefaultImage: $('#IsDefaultImage').is(":checked").valueOf(),
+                                    },
+                                    success: function (jqXhr, textStatus, errorMessage) {
+                                    },
+                                    error: function (jqXhr, textStatus, errorMessage) {
+                                        alert("Nije uneseno u tabelu Attachments:\n" + errorMessage);
+                                    }
+                                })
+                            }
+                        })
+
+                        location.href = "/FleetAssets";
+                    },
+                    error: function (jqXhr, textStatus, errorMessage) {
+                        alert("Nije uneseno u bazu:\n" + errorMessage);
+                    }
+                });
+            })
+        })
+    </script>
+}
+

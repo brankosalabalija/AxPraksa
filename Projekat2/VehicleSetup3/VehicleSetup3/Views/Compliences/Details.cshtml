@@ -1,0 +1,91 @@
+﻿@model VehicleSetup3.Models.Complience
+
+@{
+    ViewBag.Title = "Details";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>Complience</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.LicenceClass)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.LicenceClass)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.LicenseNo)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.LicenseNo)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.DateObtained)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.DateObtained)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.ValidFromDate)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.ValidFromDate)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.ExpiryDate)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.ExpiryDate)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.AlertOperation)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.AlertOperation)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.ComplienceSubType.Name)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.ComplienceSubType.Name)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.ComplienceType.Class)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.ComplienceType.Class)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.FleetAsset.RegistrationNo)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.FleetAsset.RegistrationNo)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.ID }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

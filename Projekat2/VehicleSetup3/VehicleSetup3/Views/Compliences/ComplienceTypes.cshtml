@@ -1,0 +1,524 @@
+﻿@model IEnumerable<VehicleSetup3.Models.Complience>
+
+@{
+    ViewBag.Title = "ComplienceTypes";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>ComplienceTypes</h2>
+
+<p>
+    @Html.ActionLink("Create New Complience", "Create")
+</p>
+
+<ul class="nav nav-pills">
+    @*<li class="active"><a data-toggle="pill" href="#home">Home</a></li>*@
+    <li><a data-toggle="pill" href="#accsubcontr">Accreditation SubContractor</a></li>
+    <li><a data-toggle="pill" href="#acctra">Accreditation Trailer</a></li>
+    <li><a data-toggle="pill" href="#accdriv">Accreditation Driver</a></li>
+    <li><a data-toggle="pill" href="#inddr">Induction Driver</a></li>
+    <li><a data-toggle="pill" href="#indsubcont">Induction SubContractor</a></li>
+    <li><a data-toggle="pill" href="#insur">Insurance</a></li>
+    <li><a data-toggle="pill" href="#licen">Licence</a></li>
+    <li><a data-toggle="pill" href="#rattra">Rating Trailer</a></li>
+    <li><a data-toggle="pill" href="#ratveh">Rating Vehicle</a></li>
+    <li><a data-toggle="pill" href="#regtra">Registration Trailer</a></li>
+    <li><a data-toggle="pill" href="#regveh">Registration Vehicle</a></li>
+</ul>
+
+<div class="tab-content">
+    <div id="accsubcontr" class="tab-pane fade in active">
+        <table class="table">
+            <tr>
+                <th>
+                    @Html.DisplayNameFor(model => model.ValidFromDate)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.ExpiryDate)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.AlertOperation)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.DateObtained)
+                </th>
+                <th></th>
+            </tr>
+            @foreach (var item in Model)
+            {
+                if (item.ComplienceTypeID == 2 && item.SubTypeID == 4)
+                {
+                    <tr>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.ValidFromDate)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.ExpiryDate)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.AlertOperation)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.DateObtained)
+                        </td>
+                        <td>
+                            @Html.ActionLink(" ", "Edit", new { id = item.ID }, new { @class = "btn btn-secondary glyphicon glyphicon-cog" })
+                        </td>
+                    </tr>
+                }
+            }
+        </table>
+
+    </div>
+    <div id="acctra" class="tab-pane fade">
+        <table class="table">
+            <tr>
+                <th>
+                    @Html.DisplayNameFor(model => model.FleetNo)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.ValidFromDate)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.ExpiryDate)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.AlertOperation)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.DateObtained)
+                </th>
+                <th></th>
+            </tr>
+            @foreach (var item in Model)
+            {
+                if (item.ComplienceTypeID == 4 && item.SubTypeID == 4)
+                {
+                    <tr>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.FleetNo)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.ValidFromDate)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.ExpiryDate)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.AlertOperation)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.DateObtained)
+                        </td>
+                        <td>
+                            @Html.ActionLink(" ", "Edit", new { id = item.ID }, new { @class = "btn btn-secondary glyphicon glyphicon-cog" }) 
+                        </td>
+                    </tr>
+                }
+            }
+        </table>
+
+    </div>
+    <div id="accdriv" class="tab-pane fade">
+        <table class="table">
+            <tr>
+                <th>
+                    @Html.DisplayNameFor(model => model.FleetNo)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.ValidFromDate)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.ExpiryDate)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.AlertOperation)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.DateObtained)
+                </th>
+                <th></th>
+            </tr>
+            @foreach (var item in Model)
+            {
+                if (item.ComplienceTypeID == 2 && item.SubTypeID == 1)
+                {
+                    <tr>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.FleetNo)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.ValidFromDate)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.ExpiryDate)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.AlertOperation)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.DateObtained)
+                        </td>
+                        <td>
+                            @Html.ActionLink(" ", "Edit", new { id = item.ID }, new { @class = "btn btn-secondary glyphicon glyphicon-cog" })
+                        </td>
+                    </tr>
+                }
+            }
+        </table>
+
+    </div>
+    <div id="inddr" class="tab-pane fade">
+        <table class="table">
+            <tr>
+                <th>
+                    @Html.DisplayNameFor(model => model.FleetNo)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.AlertOperation)
+                </th>
+                <th></th>
+            </tr>
+            @foreach (var item in Model)
+            {
+                if (item.ComplienceTypeID == 6 && item.SubTypeID == 1)
+                {
+                    <tr>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.FleetNo)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.AlertOperation)
+                        </td>
+                        <td>
+                            @Html.ActionLink(" ", "Edit", new { id = item.ID }, new { @class = "btn btn-secondary glyphicon glyphicon-cog" })
+                        </td>
+
+                    </tr>
+                }
+            }
+        </table>
+
+
+    </div>
+    <div id="indsubcont" class="tab-pane fade">
+        <table class="table">
+            <tr>
+                <th>
+                    @Html.DisplayNameFor(model => model.FleetNo)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.AlertOperation)
+                </th>
+                <th></th>
+            </tr>
+            @foreach (var item in Model)
+            {
+                if (item.ComplienceTypeID == 6 && item.SubTypeID == 2)
+                {
+                    <tr>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.FleetNo)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.AlertOperation)
+                        </td>
+                        <td>
+                            @Html.ActionLink(" ", "Edit", new { id = item.ID }, new { @class = "btn btn-secondary glyphicon glyphicon-cog" })
+                        </td>
+
+                    </tr>
+                }
+            }
+        </table>
+
+
+    </div>
+    <div id="insur" class="tab-pane fade">
+        <table class="table">
+            <tr>
+                <th>
+                    @Html.DisplayNameFor(model => model.FleetNo)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.ValidFromDate)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.ExpiryDate)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.DateObtained)
+                </th>
+                <th></th>
+            </tr>
+            @foreach (var item in Model)
+            {
+                if (item.ComplienceTypeID == 2 && item.SubTypeID == 3)
+                {
+                    <tr>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.FleetNo)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.ValidFromDate)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.ExpiryDate)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.DateObtained)
+                        </td>
+                        <td>
+                            @Html.ActionLink(" ", "Edit", new { id = item.ID }, new { @class = "btn btn-secondary glyphicon glyphicon-cog" })
+                        </td>
+
+                    </tr>
+                }
+            }
+        </table>
+
+
+    </div>
+    <div id="licen" class="tab-pane fade">
+        <table class="table">
+            <tr>
+                <th>
+                    @Html.DisplayNameFor(model => model.FleetNo)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.LicenceClass)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.LicenseNo)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.ValidFromDate)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.ExpiryDate)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.AlertOperation)
+                </th>
+                <th></th>
+            </tr>
+            @foreach (var item in Model)
+            {
+                if (item.ComplienceTypeID == 1 && item.SubTypeID == 1)
+                {
+                    <tr>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.FleetNo)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.LicenceClass)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.LicenseNo)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.ValidFromDate)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.ExpiryDate)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.AlertOperation)
+                        </td>
+                        <td>
+                            @Html.ActionLink(" ", "Edit", new { id = item.ID }, new { @class = "btn btn-secondary glyphicon glyphicon-cog" })
+                        </td>
+
+                    </tr>
+                }
+            }
+        </table>
+
+
+    </div>
+    <div id="rattra" class="tab-pane fade">
+        <table class="table">
+            <tr>
+                <th>
+                    @Html.DisplayNameFor(model => model.FleetNo)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.AlertOperation)
+                </th>
+                <th></th>
+            </tr>
+            @foreach (var item in Model)
+            {
+                if (item.ComplienceTypeID == 5 && item.SubTypeID == 4)
+                {
+                    <tr>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.FleetNo)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.AlertOperation)
+                        </td>
+                        <td>
+                            @Html.ActionLink(" ", "Edit", new { id = item.ID }, new { @class = "btn btn-secondary glyphicon glyphicon-cog" })
+
+                    </tr>
+                }
+            }
+        </table>
+
+
+
+    </div>
+    <div id="ratveh" class="tab-pane fade">
+        <table class="table">
+            <tr>
+                <th>
+                    @Html.DisplayNameFor(model => model.FleetNo)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.AlertOperation)
+                </th>
+                <th></th>
+            </tr>
+            @foreach (var item in Model)
+            {
+                if (item.ComplienceTypeID == 5 && item.SubTypeID == 3
+)
+                {
+                    <tr>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.FleetNo)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.AlertOperation)
+                        </td>
+                        <td>
+                            @Html.ActionLink(" ", "Edit", new { id = item.ID }, new { @class = "btn btn-secondary glyphicon glyphicon-cog" })
+                        </td>
+
+                    </tr>
+                }
+            }
+        </table>
+
+    </div>
+    <div id="regtra" class="tab-pane fade">
+        <table class="table">
+            <tr>
+                <th>
+                    @Html.DisplayNameFor(model => model.FleetNo)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.ValidFromDate)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.ExpiryDate)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.AlertOperation)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.DateObtained)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.LicenseNo)
+                </th>
+                <th></th>
+            </tr>
+            @foreach (var item in Model)
+            {
+                if (item.ComplienceTypeID == 3 && item.SubTypeID == 4)
+                {
+                    <tr>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.FleetNo)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.ValidFromDate)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.ExpiryDate)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.AlertOperation)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.DateObtained)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.LicenseNo)
+                        </td>
+                        <td>
+                            @Html.ActionLink(" ", "Edit", new { id = item.ID }, new { @class = "btn btn-secondary glyphicon glyphicon-cog" })
+                        </td>
+
+
+                    </tr>
+                }
+            }
+        </table>
+
+
+    </div>
+    <div id="regveh" class="tab-pane fade">
+        <table class="table">
+            <tr>
+                <th>
+                    @Html.DisplayNameFor(model => model.FleetNo)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.ValidFromDate)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.ExpiryDate)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.AlertOperation)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.DateObtained)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.LicenseNo)
+                </th>
+                <th></th>
+            </tr>
+            @foreach (var item in Model)
+            {
+                if (item.ComplienceTypeID == 3 && item.SubTypeID == 3)
+                {
+                    <tr>
+
+                        <td>
+                            @Html.DisplayFor(modelItem => item.FleetNo)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.ValidFromDate)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.ExpiryDate)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.AlertOperation)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.DateObtained)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.LicenseNo)
+                        </td>
+                        <td>
+                            @Html.ActionLink(" ", "Edit", new { id = item.ID }, new { @class = "btn btn-secondary glyphicon glyphicon-cog" })
+                        </td>
+
+                    </tr>
+                }
+            }
+        </table>
+
+
+    </div>
+</div>
+
+
+

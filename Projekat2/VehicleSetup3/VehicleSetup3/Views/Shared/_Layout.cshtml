@@ -1,0 +1,65 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>@ViewBag.Title - My ASP.NET Application</title>
+    @Styles.Render("~/Content/css")
+    @Scripts.Render("~/bundles/modernizr")
+
+</head>
+<body>
+    <div class="navbar navbar-inverse navbar-fixed-top">
+        <div class="container">
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                @Html.ActionLink("Vehicle setup", "Index", "Home", new { area = "" }, new { @class = "navbar-brand" })
+            </div>
+            <div class="navbar-collapse collapse">
+                <ul class="nav navbar-nav">
+                    <li>@Html.ActionLink("Fleet Asset", "Index", "FleetAssets")</li>
+                    <li>@Html.ActionLink("Additional Fields", "Index", "AdditionalFields")</li>
+                    <li>@Html.ActionLink("Complience", "ComplienceTypes", "Compliences")</li>
+                    @if (Request.IsAuthenticated)
+                    {
+                        <li>
+                            <a href="#" class="dropdown-toggle" type="button" data-toggle="dropdown">Admin Section<span class="caret"></span></a>
+                            <ul class="dropdown-menu">
+                                <li>@Html.ActionLink("Asset SubType", "Index", "AssetSubTypes")</li>
+                                <li>@Html.ActionLink("Asset Type", "Index", "AssetTypes")</li>
+                                <li>@Html.ActionLink("Attachments", "Index", "Attachments")</li>
+                                <li>@Html.ActionLink("Capacities", "Index", "Capacities")</li>
+                                <li>@Html.ActionLink("Compliences List", "Index", "Compliences")</li>
+                                <li>@Html.ActionLink("Compliences SubType", "Index", "CompliencesSubTypes")</li>
+                                <li>@Html.ActionLink("Compliences Type", "Index", "CompliencesTypes")</li>
+                                <li>@Html.ActionLink("Fleet Asset Makes", "Index", "FleetAssetMakes")</li>
+                                <li>@Html.ActionLink("Fleet Asset Model", "Index", "FleetAssetModels")</li>
+                                <li>@Html.ActionLink("Fuel Type", "Index", "FuelTypes")</li>
+                                <li><hr /></li>
+                                <li>@Html.ActionLink("User list", "Index", "UserLists")</li>
+                            </ul>
+                        </li>
+                    }
+
+                    </ul>
+                @Html.Partial("_LoginPartial")
+            </div>
+        </div>
+    </div>
+    <div class="container body-content">
+        @RenderBody()
+        <hr />
+        <footer>
+            <p>&copy; @DateTime.Now.Year - My ASP.NET Application</p>
+        </footer>
+    </div>
+
+    @Scripts.Render("~/bundles/jquery")
+    @Scripts.Render("~/bundles/bootstrap")
+    @RenderSection("scripts", required: false)
+</body>
+</html>

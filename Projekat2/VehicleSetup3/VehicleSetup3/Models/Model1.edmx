@@ -1,0 +1,1173 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+    <Schema Namespace="VehicleSetupModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityType Name="AdditionalFields">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="FleetNo" Type="nvarchar" MaxLength="8" Nullable="false" />
+          <Property Name="Name" Type="nvarchar" MaxLength="50" />
+          <Property Name="Value" Type="nvarchar" MaxLength="50" />
+        </EntityType>
+        <EntityType Name="AspNetRoles">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="nvarchar" MaxLength="128" Nullable="false" />
+          <Property Name="Name" Type="nvarchar" MaxLength="256" Nullable="false" />
+        </EntityType>
+        <EntityType Name="AspNetUserClaims">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="UserId" Type="nvarchar" MaxLength="128" Nullable="false" />
+          <Property Name="ClaimType" Type="nvarchar(max)" />
+          <Property Name="ClaimValue" Type="nvarchar(max)" />
+        </EntityType>
+        <EntityType Name="AspNetUserLogins">
+          <Key>
+            <PropertyRef Name="LoginProvider" />
+            <PropertyRef Name="ProviderKey" />
+            <PropertyRef Name="UserId" />
+          </Key>
+          <Property Name="LoginProvider" Type="nvarchar" MaxLength="128" Nullable="false" />
+          <Property Name="ProviderKey" Type="nvarchar" MaxLength="128" Nullable="false" />
+          <Property Name="UserId" Type="nvarchar" MaxLength="128" Nullable="false" />
+        </EntityType>
+        <EntityType Name="AspNetUserRoles">
+          <Key>
+            <PropertyRef Name="UserId" />
+            <PropertyRef Name="RoleId" />
+          </Key>
+          <Property Name="UserId" Type="nvarchar" MaxLength="128" Nullable="false" />
+          <Property Name="RoleId" Type="nvarchar" MaxLength="128" Nullable="false" />
+        </EntityType>
+        <EntityType Name="AspNetUsers">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="nvarchar" MaxLength="128" Nullable="false" />
+          <Property Name="Email" Type="nvarchar" MaxLength="256" />
+          <Property Name="EmailConfirmed" Type="bit" Nullable="false" />
+          <Property Name="PasswordHash" Type="nvarchar(max)" />
+          <Property Name="SecurityStamp" Type="nvarchar(max)" />
+          <Property Name="PhoneNumber" Type="nvarchar(max)" />
+          <Property Name="PhoneNumberConfirmed" Type="bit" Nullable="false" />
+          <Property Name="TwoFactorEnabled" Type="bit" Nullable="false" />
+          <Property Name="LockoutEndDateUtc" Type="datetime" />
+          <Property Name="LockoutEnabled" Type="bit" Nullable="false" />
+          <Property Name="AccessFailedCount" Type="int" Nullable="false" />
+          <Property Name="UserName" Type="nvarchar" MaxLength="256" Nullable="false" />
+        </EntityType>
+        <EntityType Name="AssetSubType">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="SubType" Type="nvarchar" MaxLength="15" Nullable="false" />
+          <Property Name="AssetTypeID" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityType Name="AssetType">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Type" Type="nvarchar" MaxLength="20" Nullable="false" />
+          <Property Name="IsVehicle" Type="bit" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Attachments">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="FleetNo" Type="nvarchar" MaxLength="8" Nullable="false" />
+          <Property Name="Name" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="Extension" Type="nvarchar" MaxLength="5" Nullable="false" />
+          <Property Name="Size" Type="nvarchar" MaxLength="10" Nullable="false" />
+          <Property Name="Path" Type="nvarchar" MaxLength="200" Nullable="false" />
+          <Property Name="Image" Type="image" />
+          <Property Name="IsDefaultImage" Type="bit" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Capacity">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="FleetNo" Type="nvarchar" MaxLength="8" Nullable="false" />
+          <Property Name="Pallets" Type="int" />
+          <Property Name="Spaces" Type="int" />
+          <Property Name="CubicSpace" Type="decimal" Precision="9" Scale="2" />
+          <Property Name="InternalHeight" Type="decimal" Precision="7" Scale="2" />
+          <Property Name="InternalWidht" Type="decimal" Precision="7" Scale="2" />
+          <Property Name="InternalLenght" Type="decimal" Precision="7" Scale="2" />
+          <Property Name="Tare" Type="decimal" Precision="10" Scale="3" />
+          <Property Name="GVM" Type="decimal" Precision="10" Scale="3" />
+          <Property Name="GCM" Type="decimal" Precision="10" Scale="3" />
+          <Property Name="IsMainCapacity" Type="bit" Nullable="false" />
+          <Property Name="AxelWeight1" Type="decimal" Precision="10" Scale="3" />
+          <Property Name="AxelWeight2" Type="decimal" Precision="10" Scale="3" />
+          <Property Name="AxelWeight3" Type="decimal" Precision="10" Scale="3" />
+        </EntityType>
+        <EntityType Name="Complience">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="FleetNo" Type="nvarchar" MaxLength="8" Nullable="false" />
+          <Property Name="ComplienceTypeID" Type="int" Nullable="false" />
+          <Property Name="SubTypeID" Type="int" Nullable="false" />
+          <Property Name="LicenceClass" Type="nvarchar" MaxLength="30" />
+          <Property Name="LicenseNo" Type="nvarchar" MaxLength="12" />
+          <Property Name="DateObtained" Type="date" />
+          <Property Name="ValidFromDate" Type="date" />
+          <Property Name="ExpiryDate" Type="date" />
+          <Property Name="AlertOperation" Type="nvarchar(max)" />
+        </EntityType>
+        <EntityType Name="ComplienceSubType">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Name" Type="nvarchar" MaxLength="15" Nullable="false" />
+        </EntityType>
+        <EntityType Name="ComplienceType">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Class" Type="nvarchar" MaxLength="20" Nullable="false" />
+        </EntityType>
+        <EntityType Name="FleetAsset">
+          <Key>
+            <PropertyRef Name="FleetNo" />
+          </Key>
+          <Property Name="FleetNo" Type="nvarchar" MaxLength="8" Nullable="false" />
+          <Property Name="RegistrationNo" Type="nvarchar" MaxLength="12" Nullable="false" />
+          <Property Name="Depot" Type="nvarchar" MaxLength="20" Nullable="false" />
+          <Property Name="Year" Type="nvarchar" MaxLength="4" Nullable="false" />
+          <Property Name="Description" Type="nvarchar" MaxLength="100" />
+          <Property Name="FleetAssetMakeID" Type="int" Nullable="false" />
+          <Property Name="FleetAssetModelID" Type="int" Nullable="false" />
+          <Property Name="TypeID" Type="int" Nullable="false" />
+          <Property Name="SubTypeID" Type="int" Nullable="false" />
+          <Property Name="FuelTypeID" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityType Name="FleetAssetMake">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Manufacturer" Type="nvarchar" MaxLength="50" Nullable="false" />
+        </EntityType>
+        <EntityType Name="FleetAssetModel">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Name" Type="nvarchar" MaxLength="20" Nullable="false" />
+          <Property Name="FleetAssetMakeID" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityType Name="FuelType">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Fuel" Type="nvarchar" MaxLength="20" Nullable="false" />
+        </EntityType>
+        <Association Name="FK_AdditionalFields_Details">
+          <End Role="FleetAsset" Type="Self.FleetAsset" Multiplicity="1" />
+          <End Role="AdditionalFields" Type="Self.AdditionalFields" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="FleetAsset">
+              <PropertyRef Name="FleetNo" />
+            </Principal>
+            <Dependent Role="AdditionalFields">
+              <PropertyRef Name="FleetNo" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_AssetSubType_AssetType">
+          <End Role="AssetType" Type="Self.AssetType" Multiplicity="1" />
+          <End Role="AssetSubType" Type="Self.AssetSubType" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="AssetType">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="AssetSubType">
+              <PropertyRef Name="AssetTypeID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Attachments_Details">
+          <End Role="FleetAsset" Type="Self.FleetAsset" Multiplicity="1" />
+          <End Role="Attachments" Type="Self.Attachments" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="FleetAsset">
+              <PropertyRef Name="FleetNo" />
+            </Principal>
+            <Dependent Role="Attachments">
+              <PropertyRef Name="FleetNo" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Capacity_Details">
+          <End Role="FleetAsset" Type="Self.FleetAsset" Multiplicity="1" />
+          <End Role="Capacity" Type="Self.Capacity" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="FleetAsset">
+              <PropertyRef Name="FleetNo" />
+            </Principal>
+            <Dependent Role="Capacity">
+              <PropertyRef Name="FleetNo" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Complience_ComplienceSubType">
+          <End Role="ComplienceSubType" Type="Self.ComplienceSubType" Multiplicity="1" />
+          <End Role="Complience" Type="Self.Complience" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="ComplienceSubType">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="Complience">
+              <PropertyRef Name="SubTypeID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Complience_ComplienceType">
+          <End Role="ComplienceType" Type="Self.ComplienceType" Multiplicity="1" />
+          <End Role="Complience" Type="Self.Complience" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="ComplienceType">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="Complience">
+              <PropertyRef Name="ComplienceTypeID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Complience_Details">
+          <End Role="FleetAsset" Type="Self.FleetAsset" Multiplicity="1" />
+          <End Role="Complience" Type="Self.Complience" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="FleetAsset">
+              <PropertyRef Name="FleetNo" />
+            </Principal>
+            <Dependent Role="Complience">
+              <PropertyRef Name="FleetNo" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_dbo_AspNetUserClaims_dbo_AspNetUsers_UserId">
+          <End Role="AspNetUsers" Type="Self.AspNetUsers" Multiplicity="1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Role="AspNetUserClaims" Type="Self.AspNetUserClaims" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="AspNetUsers">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="AspNetUserClaims">
+              <PropertyRef Name="UserId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_dbo_AspNetUserLogins_dbo_AspNetUsers_UserId">
+          <End Role="AspNetUsers" Type="Self.AspNetUsers" Multiplicity="1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Role="AspNetUserLogins" Type="Self.AspNetUserLogins" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="AspNetUsers">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="AspNetUserLogins">
+              <PropertyRef Name="UserId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_dbo_AspNetUserRoles_dbo_AspNetRoles_RoleId">
+          <End Role="AspNetRoles" Type="Self.AspNetRoles" Multiplicity="1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Role="AspNetUserRoles" Type="Self.AspNetUserRoles" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="AspNetRoles">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="AspNetUserRoles">
+              <PropertyRef Name="RoleId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_dbo_AspNetUserRoles_dbo_AspNetUsers_UserId">
+          <End Role="AspNetUsers" Type="Self.AspNetUsers" Multiplicity="1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Role="AspNetUserRoles" Type="Self.AspNetUserRoles" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="AspNetUsers">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="AspNetUserRoles">
+              <PropertyRef Name="UserId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Details_AssetSubType">
+          <End Role="AssetSubType" Type="Self.AssetSubType" Multiplicity="1" />
+          <End Role="FleetAsset" Type="Self.FleetAsset" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="AssetSubType">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="FleetAsset">
+              <PropertyRef Name="SubTypeID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Details_AssetType">
+          <End Role="AssetType" Type="Self.AssetType" Multiplicity="1" />
+          <End Role="FleetAsset" Type="Self.FleetAsset" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="AssetType">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="FleetAsset">
+              <PropertyRef Name="TypeID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Details_FleetAssetMake">
+          <End Role="FleetAssetMake" Type="Self.FleetAssetMake" Multiplicity="1" />
+          <End Role="FleetAsset" Type="Self.FleetAsset" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="FleetAssetMake">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="FleetAsset">
+              <PropertyRef Name="FleetAssetMakeID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Details_FleetAssetModel">
+          <End Role="FleetAssetModel" Type="Self.FleetAssetModel" Multiplicity="1" />
+          <End Role="FleetAsset" Type="Self.FleetAsset" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="FleetAssetModel">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="FleetAsset">
+              <PropertyRef Name="FleetAssetModelID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Details_FuelType">
+          <End Role="FuelType" Type="Self.FuelType" Multiplicity="1" />
+          <End Role="FleetAsset" Type="Self.FleetAsset" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="FuelType">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="FleetAsset">
+              <PropertyRef Name="FuelTypeID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_FleetAssetModel_FleetAssetMake">
+          <End Role="FleetAssetMake" Type="Self.FleetAssetMake" Multiplicity="1" />
+          <End Role="FleetAssetModel" Type="Self.FleetAssetModel" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="FleetAssetMake">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="FleetAssetModel">
+              <PropertyRef Name="FleetAssetMakeID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityContainer Name="VehicleSetupModelStoreContainer">
+          <EntitySet Name="AdditionalFields" EntityType="Self.AdditionalFields" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="AspNetRoles" EntityType="Self.AspNetRoles" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="AspNetUserClaims" EntityType="Self.AspNetUserClaims" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="AspNetUserLogins" EntityType="Self.AspNetUserLogins" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="AspNetUserRoles" EntityType="Self.AspNetUserRoles" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="AspNetUsers" EntityType="Self.AspNetUsers" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="AssetSubType" EntityType="Self.AssetSubType" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="AssetType" EntityType="Self.AssetType" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Attachments" EntityType="Self.Attachments" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Capacity" EntityType="Self.Capacity" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Complience" EntityType="Self.Complience" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="ComplienceSubType" EntityType="Self.ComplienceSubType" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="ComplienceType" EntityType="Self.ComplienceType" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="FleetAsset" EntityType="Self.FleetAsset" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="FleetAssetMake" EntityType="Self.FleetAssetMake" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="FleetAssetModel" EntityType="Self.FleetAssetModel" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="FuelType" EntityType="Self.FuelType" Schema="dbo" store:Type="Tables" />
+          <AssociationSet Name="FK_AdditionalFields_Details" Association="Self.FK_AdditionalFields_Details">
+            <End Role="FleetAsset" EntitySet="FleetAsset" />
+            <End Role="AdditionalFields" EntitySet="AdditionalFields" />
+          </AssociationSet>
+          <AssociationSet Name="FK_AssetSubType_AssetType" Association="Self.FK_AssetSubType_AssetType">
+            <End Role="AssetType" EntitySet="AssetType" />
+            <End Role="AssetSubType" EntitySet="AssetSubType" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Attachments_Details" Association="Self.FK_Attachments_Details">
+            <End Role="FleetAsset" EntitySet="FleetAsset" />
+            <End Role="Attachments" EntitySet="Attachments" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Capacity_Details" Association="Self.FK_Capacity_Details">
+            <End Role="FleetAsset" EntitySet="FleetAsset" />
+            <End Role="Capacity" EntitySet="Capacity" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Complience_ComplienceSubType" Association="Self.FK_Complience_ComplienceSubType">
+            <End Role="ComplienceSubType" EntitySet="ComplienceSubType" />
+            <End Role="Complience" EntitySet="Complience" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Complience_ComplienceType" Association="Self.FK_Complience_ComplienceType">
+            <End Role="ComplienceType" EntitySet="ComplienceType" />
+            <End Role="Complience" EntitySet="Complience" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Complience_Details" Association="Self.FK_Complience_Details">
+            <End Role="FleetAsset" EntitySet="FleetAsset" />
+            <End Role="Complience" EntitySet="Complience" />
+          </AssociationSet>
+          <AssociationSet Name="FK_dbo_AspNetUserClaims_dbo_AspNetUsers_UserId" Association="Self.FK_dbo_AspNetUserClaims_dbo_AspNetUsers_UserId">
+            <End Role="AspNetUsers" EntitySet="AspNetUsers" />
+            <End Role="AspNetUserClaims" EntitySet="AspNetUserClaims" />
+          </AssociationSet>
+          <AssociationSet Name="FK_dbo_AspNetUserLogins_dbo_AspNetUsers_UserId" Association="Self.FK_dbo_AspNetUserLogins_dbo_AspNetUsers_UserId">
+            <End Role="AspNetUsers" EntitySet="AspNetUsers" />
+            <End Role="AspNetUserLogins" EntitySet="AspNetUserLogins" />
+          </AssociationSet>
+          <AssociationSet Name="FK_dbo_AspNetUserRoles_dbo_AspNetRoles_RoleId" Association="Self.FK_dbo_AspNetUserRoles_dbo_AspNetRoles_RoleId">
+            <End Role="AspNetRoles" EntitySet="AspNetRoles" />
+            <End Role="AspNetUserRoles" EntitySet="AspNetUserRoles" />
+          </AssociationSet>
+          <AssociationSet Name="FK_dbo_AspNetUserRoles_dbo_AspNetUsers_UserId" Association="Self.FK_dbo_AspNetUserRoles_dbo_AspNetUsers_UserId">
+            <End Role="AspNetUsers" EntitySet="AspNetUsers" />
+            <End Role="AspNetUserRoles" EntitySet="AspNetUserRoles" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Details_AssetSubType" Association="Self.FK_Details_AssetSubType">
+            <End Role="AssetSubType" EntitySet="AssetSubType" />
+            <End Role="FleetAsset" EntitySet="FleetAsset" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Details_AssetType" Association="Self.FK_Details_AssetType">
+            <End Role="AssetType" EntitySet="AssetType" />
+            <End Role="FleetAsset" EntitySet="FleetAsset" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Details_FleetAssetMake" Association="Self.FK_Details_FleetAssetMake">
+            <End Role="FleetAssetMake" EntitySet="FleetAssetMake" />
+            <End Role="FleetAsset" EntitySet="FleetAsset" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Details_FleetAssetModel" Association="Self.FK_Details_FleetAssetModel">
+            <End Role="FleetAssetModel" EntitySet="FleetAssetModel" />
+            <End Role="FleetAsset" EntitySet="FleetAsset" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Details_FuelType" Association="Self.FK_Details_FuelType">
+            <End Role="FuelType" EntitySet="FuelType" />
+            <End Role="FleetAsset" EntitySet="FleetAsset" />
+          </AssociationSet>
+          <AssociationSet Name="FK_FleetAssetModel_FleetAssetMake" Association="Self.FK_FleetAssetModel_FleetAssetMake">
+            <End Role="FleetAssetMake" EntitySet="FleetAssetMake" />
+            <End Role="FleetAssetModel" EntitySet="FleetAssetModel" />
+          </AssociationSet>
+        </EntityContainer>
+      </Schema></edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="VehicleSetupModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityContainer Name="VehicleSetupEntities" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="AdditionalFields" EntityType="VehicleSetupModel.AdditionalField" />
+          <EntitySet Name="AssetSubTypes" EntityType="VehicleSetupModel.AssetSubType" />
+          <EntitySet Name="AssetTypes" EntityType="VehicleSetupModel.AssetType" />
+          <EntitySet Name="Attachments" EntityType="VehicleSetupModel.Attachment" />
+          <EntitySet Name="Capacities" EntityType="VehicleSetupModel.Capacity" />
+          <EntitySet Name="Compliences" EntityType="VehicleSetupModel.Complience" />
+          <EntitySet Name="ComplienceSubTypes" EntityType="VehicleSetupModel.ComplienceSubType" />
+          <EntitySet Name="ComplienceTypes" EntityType="VehicleSetupModel.ComplienceType" />
+          <EntitySet Name="FleetAssets" EntityType="VehicleSetupModel.FleetAsset" />
+          <EntitySet Name="FleetAssetMakes" EntityType="VehicleSetupModel.FleetAssetMake" />
+          <EntitySet Name="FleetAssetModels" EntityType="VehicleSetupModel.FleetAssetModel" />
+          <EntitySet Name="FuelTypes" EntityType="VehicleSetupModel.FuelType" />
+          <AssociationSet Name="FK_AdditionalFields_Details" Association="VehicleSetupModel.FK_AdditionalFields_Details">
+            <End Role="FleetAsset" EntitySet="FleetAssets" />
+            <End Role="AdditionalField" EntitySet="AdditionalFields" />
+          </AssociationSet>
+          <AssociationSet Name="FK_AssetSubType_AssetType" Association="VehicleSetupModel.FK_AssetSubType_AssetType">
+            <End Role="AssetType" EntitySet="AssetTypes" />
+            <End Role="AssetSubType" EntitySet="AssetSubTypes" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Details_AssetSubType" Association="VehicleSetupModel.FK_Details_AssetSubType">
+            <End Role="AssetSubType" EntitySet="AssetSubTypes" />
+            <End Role="FleetAsset" EntitySet="FleetAssets" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Details_AssetType" Association="VehicleSetupModel.FK_Details_AssetType">
+            <End Role="AssetType" EntitySet="AssetTypes" />
+            <End Role="FleetAsset" EntitySet="FleetAssets" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Attachments_Details" Association="VehicleSetupModel.FK_Attachments_Details">
+            <End Role="FleetAsset" EntitySet="FleetAssets" />
+            <End Role="Attachment" EntitySet="Attachments" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Capacity_Details" Association="VehicleSetupModel.FK_Capacity_Details">
+            <End Role="FleetAsset" EntitySet="FleetAssets" />
+            <End Role="Capacity" EntitySet="Capacities" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Complience_ComplienceSubType" Association="VehicleSetupModel.FK_Complience_ComplienceSubType">
+            <End Role="ComplienceSubType" EntitySet="ComplienceSubTypes" />
+            <End Role="Complience" EntitySet="Compliences" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Complience_ComplienceType" Association="VehicleSetupModel.FK_Complience_ComplienceType">
+            <End Role="ComplienceType" EntitySet="ComplienceTypes" />
+            <End Role="Complience" EntitySet="Compliences" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Complience_Details" Association="VehicleSetupModel.FK_Complience_Details">
+            <End Role="FleetAsset" EntitySet="FleetAssets" />
+            <End Role="Complience" EntitySet="Compliences" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Details_FleetAssetMake" Association="VehicleSetupModel.FK_Details_FleetAssetMake">
+            <End Role="FleetAssetMake" EntitySet="FleetAssetMakes" />
+            <End Role="FleetAsset" EntitySet="FleetAssets" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Details_FleetAssetModel" Association="VehicleSetupModel.FK_Details_FleetAssetModel">
+            <End Role="FleetAssetModel" EntitySet="FleetAssetModels" />
+            <End Role="FleetAsset" EntitySet="FleetAssets" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Details_FuelType" Association="VehicleSetupModel.FK_Details_FuelType">
+            <End Role="FuelType" EntitySet="FuelTypes" />
+            <End Role="FleetAsset" EntitySet="FleetAssets" />
+          </AssociationSet>
+          <AssociationSet Name="FK_FleetAssetModel_FleetAssetMake" Association="VehicleSetupModel.FK_FleetAssetModel_FleetAssetMake">
+            <End Role="FleetAssetMake" EntitySet="FleetAssetMakes" />
+            <End Role="FleetAssetModel" EntitySet="FleetAssetModels" />
+          </AssociationSet>
+          <EntitySet Name="AspNetRoles" EntityType="VehicleSetupModel.AspNetRole" />
+          <EntitySet Name="AspNetUserClaims" EntityType="VehicleSetupModel.AspNetUserClaim" />
+          <EntitySet Name="AspNetUserLogins" EntityType="VehicleSetupModel.AspNetUserLogin" />
+          <EntitySet Name="AspNetUsers" EntityType="VehicleSetupModel.AspNetUser" />
+          <AssociationSet Name="FK_dbo_AspNetUserClaims_dbo_AspNetUsers_UserId" Association="VehicleSetupModel.FK_dbo_AspNetUserClaims_dbo_AspNetUsers_UserId">
+            <End Role="AspNetUser" EntitySet="AspNetUsers" />
+            <End Role="AspNetUserClaim" EntitySet="AspNetUserClaims" />
+          </AssociationSet>
+          <AssociationSet Name="FK_dbo_AspNetUserLogins_dbo_AspNetUsers_UserId" Association="VehicleSetupModel.FK_dbo_AspNetUserLogins_dbo_AspNetUsers_UserId">
+            <End Role="AspNetUser" EntitySet="AspNetUsers" />
+            <End Role="AspNetUserLogin" EntitySet="AspNetUserLogins" />
+          </AssociationSet>
+          <AssociationSet Name="AspNetUserRoles" Association="VehicleSetupModel.AspNetUserRoles">
+            <End Role="AspNetRole" EntitySet="AspNetRoles" />
+            <End Role="AspNetUser" EntitySet="AspNetUsers" />
+          </AssociationSet>
+        </EntityContainer>
+        <EntityType Name="AdditionalField">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="FleetNo" Type="String" Nullable="false" MaxLength="8" FixedLength="false" Unicode="true" />
+          <Property Name="Name" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Value" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <NavigationProperty Name="FleetAsset" Relationship="VehicleSetupModel.FK_AdditionalFields_Details" FromRole="AdditionalField" ToRole="FleetAsset" />
+        </EntityType>
+        <EntityType Name="AssetSubType">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="SubType" Type="String" Nullable="false" MaxLength="15" FixedLength="false" Unicode="true" />
+          <Property Name="AssetTypeID" Type="Int32" Nullable="false" />
+          <NavigationProperty Name="AssetType" Relationship="VehicleSetupModel.FK_AssetSubType_AssetType" FromRole="AssetSubType" ToRole="AssetType" />
+          <NavigationProperty Name="FleetAssets" Relationship="VehicleSetupModel.FK_Details_AssetSubType" FromRole="AssetSubType" ToRole="FleetAsset" />
+        </EntityType>
+        <EntityType Name="AssetType">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Type" Type="String" Nullable="false" MaxLength="20" FixedLength="false" Unicode="true" />
+          <Property Name="IsVehicle" Type="Boolean" Nullable="false" />
+          <NavigationProperty Name="AssetSubTypes" Relationship="VehicleSetupModel.FK_AssetSubType_AssetType" FromRole="AssetType" ToRole="AssetSubType" />
+          <NavigationProperty Name="FleetAssets" Relationship="VehicleSetupModel.FK_Details_AssetType" FromRole="AssetType" ToRole="FleetAsset" />
+        </EntityType>
+        <EntityType Name="Attachment">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="FleetNo" Type="String" Nullable="false" MaxLength="8" FixedLength="false" Unicode="true" />
+          <Property Name="Name" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Extension" Type="String" Nullable="false" MaxLength="5" FixedLength="false" Unicode="true" />
+          <Property Name="Size" Type="String" Nullable="false" MaxLength="10" FixedLength="false" Unicode="true" />
+          <Property Name="Path" Type="String" Nullable="false" MaxLength="200" FixedLength="false" Unicode="true" />
+          <Property Name="Image" Type="Binary" MaxLength="Max" FixedLength="false" />
+          <Property Name="IsDefaultImage" Type="Boolean" Nullable="false" />
+          <NavigationProperty Name="FleetAsset" Relationship="VehicleSetupModel.FK_Attachments_Details" FromRole="Attachment" ToRole="FleetAsset" />
+        </EntityType>
+        <EntityType Name="Capacity">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="FleetNo" Type="String" Nullable="false" MaxLength="8" FixedLength="false" Unicode="true" />
+          <Property Name="Pallets" Type="Int32" />
+          <Property Name="Spaces" Type="Int32" />
+          <Property Name="CubicSpace" Type="Decimal" Precision="9" Scale="2" />
+          <Property Name="InternalHeight" Type="Decimal" Precision="7" Scale="2" />
+          <Property Name="InternalWidht" Type="Decimal" Precision="7" Scale="2" />
+          <Property Name="InternalLenght" Type="Decimal" Precision="7" Scale="2" />
+          <Property Name="Tare" Type="Decimal" Precision="10" Scale="3" />
+          <Property Name="GVM" Type="Decimal" Precision="10" Scale="3" />
+          <Property Name="GCM" Type="Decimal" Precision="10" Scale="3" />
+          <Property Name="IsMainCapacity" Type="Boolean" Nullable="false" />
+          <Property Name="AxelWeight1" Type="Decimal" Precision="10" Scale="3" />
+          <Property Name="AxelWeight2" Type="Decimal" Precision="10" Scale="3" />
+          <Property Name="AxelWeight3" Type="Decimal" Precision="10" Scale="3" />
+          <NavigationProperty Name="FleetAsset" Relationship="VehicleSetupModel.FK_Capacity_Details" FromRole="Capacity" ToRole="FleetAsset" />
+        </EntityType>
+        <EntityType Name="Complience">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="FleetNo" Type="String" Nullable="false" MaxLength="8" FixedLength="false" Unicode="true" />
+          <Property Name="ComplienceTypeID" Type="Int32" Nullable="false" />
+          <Property Name="SubTypeID" Type="Int32" Nullable="false" />
+          <Property Name="LicenceClass" Type="String" MaxLength="30" FixedLength="false" Unicode="true" />
+          <Property Name="LicenseNo" Type="String" MaxLength="12" FixedLength="false" Unicode="true" />
+          <Property Name="DateObtained" Type="DateTime" Precision="0" />
+          <Property Name="ValidFromDate" Type="DateTime" Precision="0" />
+          <Property Name="ExpiryDate" Type="DateTime" Precision="0" />
+          <Property Name="AlertOperation" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <NavigationProperty Name="ComplienceSubType" Relationship="VehicleSetupModel.FK_Complience_ComplienceSubType" FromRole="Complience" ToRole="ComplienceSubType" />
+          <NavigationProperty Name="ComplienceType" Relationship="VehicleSetupModel.FK_Complience_ComplienceType" FromRole="Complience" ToRole="ComplienceType" />
+          <NavigationProperty Name="FleetAsset" Relationship="VehicleSetupModel.FK_Complience_Details" FromRole="Complience" ToRole="FleetAsset" />
+        </EntityType>
+        <EntityType Name="ComplienceSubType">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Name" Type="String" Nullable="false" MaxLength="15" FixedLength="false" Unicode="true" />
+          <NavigationProperty Name="Compliences" Relationship="VehicleSetupModel.FK_Complience_ComplienceSubType" FromRole="ComplienceSubType" ToRole="Complience" />
+        </EntityType>
+        <EntityType Name="ComplienceType">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Class" Type="String" Nullable="false" MaxLength="20" FixedLength="false" Unicode="true" />
+          <NavigationProperty Name="Compliences" Relationship="VehicleSetupModel.FK_Complience_ComplienceType" FromRole="ComplienceType" ToRole="Complience" />
+        </EntityType>
+        <EntityType Name="FleetAsset">
+          <Key>
+            <PropertyRef Name="FleetNo" />
+          </Key>
+          <Property Name="FleetNo" Type="String" Nullable="false" MaxLength="8" FixedLength="false" Unicode="true" />
+          <Property Name="RegistrationNo" Type="String" Nullable="false" MaxLength="12" FixedLength="false" Unicode="true" />
+          <Property Name="Depot" Type="String" Nullable="false" MaxLength="20" FixedLength="false" Unicode="true" />
+          <Property Name="Year" Type="String" Nullable="false" MaxLength="4" FixedLength="false" Unicode="true" />
+          <Property Name="Description" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="FleetAssetMakeID" Type="Int32" Nullable="false" />
+          <Property Name="FleetAssetModelID" Type="Int32" Nullable="false" />
+          <Property Name="TypeID" Type="Int32" Nullable="false" />
+          <Property Name="SubTypeID" Type="Int32" Nullable="false" />
+          <Property Name="FuelTypeID" Type="Int32" Nullable="false" />
+          <NavigationProperty Name="AdditionalFields" Relationship="VehicleSetupModel.FK_AdditionalFields_Details" FromRole="FleetAsset" ToRole="AdditionalField" />
+          <NavigationProperty Name="AssetSubType" Relationship="VehicleSetupModel.FK_Details_AssetSubType" FromRole="FleetAsset" ToRole="AssetSubType" />
+          <NavigationProperty Name="AssetType" Relationship="VehicleSetupModel.FK_Details_AssetType" FromRole="FleetAsset" ToRole="AssetType" />
+          <NavigationProperty Name="Attachments" Relationship="VehicleSetupModel.FK_Attachments_Details" FromRole="FleetAsset" ToRole="Attachment" />
+          <NavigationProperty Name="Capacities" Relationship="VehicleSetupModel.FK_Capacity_Details" FromRole="FleetAsset" ToRole="Capacity" />
+          <NavigationProperty Name="Compliences" Relationship="VehicleSetupModel.FK_Complience_Details" FromRole="FleetAsset" ToRole="Complience" />
+          <NavigationProperty Name="FleetAssetMake" Relationship="VehicleSetupModel.FK_Details_FleetAssetMake" FromRole="FleetAsset" ToRole="FleetAssetMake" />
+          <NavigationProperty Name="FleetAssetModel" Relationship="VehicleSetupModel.FK_Details_FleetAssetModel" FromRole="FleetAsset" ToRole="FleetAssetModel" />
+          <NavigationProperty Name="FuelType" Relationship="VehicleSetupModel.FK_Details_FuelType" FromRole="FleetAsset" ToRole="FuelType" />
+        </EntityType>
+        <EntityType Name="FleetAssetMake">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Manufacturer" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+          <NavigationProperty Name="FleetAssets" Relationship="VehicleSetupModel.FK_Details_FleetAssetMake" FromRole="FleetAssetMake" ToRole="FleetAsset" />
+          <NavigationProperty Name="FleetAssetModels" Relationship="VehicleSetupModel.FK_FleetAssetModel_FleetAssetMake" FromRole="FleetAssetMake" ToRole="FleetAssetModel" />
+        </EntityType>
+        <EntityType Name="FleetAssetModel">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Name" Type="String" Nullable="false" MaxLength="20" FixedLength="false" Unicode="true" />
+          <Property Name="FleetAssetMakeID" Type="Int32" Nullable="false" />
+          <NavigationProperty Name="FleetAssets" Relationship="VehicleSetupModel.FK_Details_FleetAssetModel" FromRole="FleetAssetModel" ToRole="FleetAsset" />
+          <NavigationProperty Name="FleetAssetMake" Relationship="VehicleSetupModel.FK_FleetAssetModel_FleetAssetMake" FromRole="FleetAssetModel" ToRole="FleetAssetMake" />
+        </EntityType>
+        <EntityType Name="FuelType">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Fuel" Type="String" Nullable="false" MaxLength="20" FixedLength="false" Unicode="true" />
+          <NavigationProperty Name="FleetAssets" Relationship="VehicleSetupModel.FK_Details_FuelType" FromRole="FuelType" ToRole="FleetAsset" />
+        </EntityType>
+        <Association Name="FK_AdditionalFields_Details">
+          <End Type="VehicleSetupModel.FleetAsset" Role="FleetAsset" Multiplicity="1" />
+          <End Type="VehicleSetupModel.AdditionalField" Role="AdditionalField" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="FleetAsset">
+              <PropertyRef Name="FleetNo" />
+            </Principal>
+            <Dependent Role="AdditionalField">
+              <PropertyRef Name="FleetNo" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_AssetSubType_AssetType">
+          <End Type="VehicleSetupModel.AssetType" Role="AssetType" Multiplicity="1" />
+          <End Type="VehicleSetupModel.AssetSubType" Role="AssetSubType" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="AssetType">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="AssetSubType">
+              <PropertyRef Name="AssetTypeID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Details_AssetSubType">
+          <End Type="VehicleSetupModel.AssetSubType" Role="AssetSubType" Multiplicity="1" />
+          <End Type="VehicleSetupModel.FleetAsset" Role="FleetAsset" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="AssetSubType">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="FleetAsset">
+              <PropertyRef Name="SubTypeID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Details_AssetType">
+          <End Type="VehicleSetupModel.AssetType" Role="AssetType" Multiplicity="1" />
+          <End Type="VehicleSetupModel.FleetAsset" Role="FleetAsset" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="AssetType">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="FleetAsset">
+              <PropertyRef Name="TypeID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Attachments_Details">
+          <End Type="VehicleSetupModel.FleetAsset" Role="FleetAsset" Multiplicity="1" />
+          <End Type="VehicleSetupModel.Attachment" Role="Attachment" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="FleetAsset">
+              <PropertyRef Name="FleetNo" />
+            </Principal>
+            <Dependent Role="Attachment">
+              <PropertyRef Name="FleetNo" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Capacity_Details">
+          <End Type="VehicleSetupModel.FleetAsset" Role="FleetAsset" Multiplicity="1" />
+          <End Type="VehicleSetupModel.Capacity" Role="Capacity" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="FleetAsset">
+              <PropertyRef Name="FleetNo" />
+            </Principal>
+            <Dependent Role="Capacity">
+              <PropertyRef Name="FleetNo" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Complience_ComplienceSubType">
+          <End Type="VehicleSetupModel.ComplienceSubType" Role="ComplienceSubType" Multiplicity="1" />
+          <End Type="VehicleSetupModel.Complience" Role="Complience" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="ComplienceSubType">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="Complience">
+              <PropertyRef Name="SubTypeID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Complience_ComplienceType">
+          <End Type="VehicleSetupModel.ComplienceType" Role="ComplienceType" Multiplicity="1" />
+          <End Type="VehicleSetupModel.Complience" Role="Complience" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="ComplienceType">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="Complience">
+              <PropertyRef Name="ComplienceTypeID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Complience_Details">
+          <End Type="VehicleSetupModel.FleetAsset" Role="FleetAsset" Multiplicity="1" />
+          <End Type="VehicleSetupModel.Complience" Role="Complience" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="FleetAsset">
+              <PropertyRef Name="FleetNo" />
+            </Principal>
+            <Dependent Role="Complience">
+              <PropertyRef Name="FleetNo" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Details_FleetAssetMake">
+          <End Type="VehicleSetupModel.FleetAssetMake" Role="FleetAssetMake" Multiplicity="1" />
+          <End Type="VehicleSetupModel.FleetAsset" Role="FleetAsset" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="FleetAssetMake">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="FleetAsset">
+              <PropertyRef Name="FleetAssetMakeID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Details_FleetAssetModel">
+          <End Type="VehicleSetupModel.FleetAssetModel" Role="FleetAssetModel" Multiplicity="1" />
+          <End Type="VehicleSetupModel.FleetAsset" Role="FleetAsset" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="FleetAssetModel">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="FleetAsset">
+              <PropertyRef Name="FleetAssetModelID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Details_FuelType">
+          <End Type="VehicleSetupModel.FuelType" Role="FuelType" Multiplicity="1" />
+          <End Type="VehicleSetupModel.FleetAsset" Role="FleetAsset" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="FuelType">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="FleetAsset">
+              <PropertyRef Name="FuelTypeID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_FleetAssetModel_FleetAssetMake">
+          <End Type="VehicleSetupModel.FleetAssetMake" Role="FleetAssetMake" Multiplicity="1" />
+          <End Type="VehicleSetupModel.FleetAssetModel" Role="FleetAssetModel" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="FleetAssetMake">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="FleetAssetModel">
+              <PropertyRef Name="FleetAssetMakeID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityType Name="AspNetRole">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="String" Nullable="false" MaxLength="128" FixedLength="false" Unicode="true" />
+          <Property Name="Name" Type="String" Nullable="false" MaxLength="256" FixedLength="false" Unicode="true" />
+          <NavigationProperty Name="AspNetUsers" Relationship="VehicleSetupModel.AspNetUserRoles" FromRole="AspNetRole" ToRole="AspNetUser" />
+        </EntityType>
+        <EntityType Name="AspNetUserClaim">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="UserId" Type="String" Nullable="false" MaxLength="128" FixedLength="false" Unicode="true" />
+          <Property Name="ClaimType" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="ClaimValue" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <NavigationProperty Name="AspNetUser" Relationship="VehicleSetupModel.FK_dbo_AspNetUserClaims_dbo_AspNetUsers_UserId" FromRole="AspNetUserClaim" ToRole="AspNetUser" />
+        </EntityType>
+        <EntityType Name="AspNetUserLogin">
+          <Key>
+            <PropertyRef Name="LoginProvider" />
+            <PropertyRef Name="ProviderKey" />
+            <PropertyRef Name="UserId" />
+          </Key>
+          <Property Name="LoginProvider" Type="String" Nullable="false" MaxLength="128" FixedLength="false" Unicode="true" />
+          <Property Name="ProviderKey" Type="String" Nullable="false" MaxLength="128" FixedLength="false" Unicode="true" />
+          <Property Name="UserId" Type="String" Nullable="false" MaxLength="128" FixedLength="false" Unicode="true" />
+          <NavigationProperty Name="AspNetUser" Relationship="VehicleSetupModel.FK_dbo_AspNetUserLogins_dbo_AspNetUsers_UserId" FromRole="AspNetUserLogin" ToRole="AspNetUser" />
+        </EntityType>
+        <EntityType Name="AspNetUser">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="String" Nullable="false" MaxLength="128" FixedLength="false" Unicode="true" />
+          <Property Name="Email" Type="String" MaxLength="256" FixedLength="false" Unicode="true" />
+          <Property Name="EmailConfirmed" Type="Boolean" Nullable="false" />
+          <Property Name="PasswordHash" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="SecurityStamp" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="PhoneNumber" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="PhoneNumberConfirmed" Type="Boolean" Nullable="false" />
+          <Property Name="TwoFactorEnabled" Type="Boolean" Nullable="false" />
+          <Property Name="LockoutEndDateUtc" Type="DateTime" Precision="3" />
+          <Property Name="LockoutEnabled" Type="Boolean" Nullable="false" />
+          <Property Name="AccessFailedCount" Type="Int32" Nullable="false" />
+          <Property Name="UserName" Type="String" Nullable="false" MaxLength="256" FixedLength="false" Unicode="true" />
+          <NavigationProperty Name="AspNetUserClaims" Relationship="VehicleSetupModel.FK_dbo_AspNetUserClaims_dbo_AspNetUsers_UserId" FromRole="AspNetUser" ToRole="AspNetUserClaim" />
+          <NavigationProperty Name="AspNetUserLogins" Relationship="VehicleSetupModel.FK_dbo_AspNetUserLogins_dbo_AspNetUsers_UserId" FromRole="AspNetUser" ToRole="AspNetUserLogin" />
+          <NavigationProperty Name="AspNetRoles" Relationship="VehicleSetupModel.AspNetUserRoles" FromRole="AspNetUser" ToRole="AspNetRole" />
+        </EntityType>
+        <Association Name="FK_dbo_AspNetUserClaims_dbo_AspNetUsers_UserId">
+          <End Type="VehicleSetupModel.AspNetUser" Role="AspNetUser" Multiplicity="1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Type="VehicleSetupModel.AspNetUserClaim" Role="AspNetUserClaim" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="AspNetUser">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="AspNetUserClaim">
+              <PropertyRef Name="UserId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_dbo_AspNetUserLogins_dbo_AspNetUsers_UserId">
+          <End Type="VehicleSetupModel.AspNetUser" Role="AspNetUser" Multiplicity="1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Type="VehicleSetupModel.AspNetUserLogin" Role="AspNetUserLogin" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="AspNetUser">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="AspNetUserLogin">
+              <PropertyRef Name="UserId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="AspNetUserRoles">
+          <End Type="VehicleSetupModel.AspNetRole" Role="AspNetRole" Multiplicity="*" />
+          <End Type="VehicleSetupModel.AspNetUser" Role="AspNetUser" Multiplicity="*" />
+        </Association>
+        </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="VehicleSetupModelStoreContainer" CdmEntityContainer="VehicleSetupEntities">
+          <EntitySetMapping Name="AdditionalFields">
+            <EntityTypeMapping TypeName="VehicleSetupModel.AdditionalField">
+              <MappingFragment StoreEntitySet="AdditionalFields">
+                <ScalarProperty Name="Value" ColumnName="Value" />
+                <ScalarProperty Name="Name" ColumnName="Name" />
+                <ScalarProperty Name="FleetNo" ColumnName="FleetNo" />
+                <ScalarProperty Name="ID" ColumnName="ID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="AssetSubTypes">
+            <EntityTypeMapping TypeName="VehicleSetupModel.AssetSubType">
+              <MappingFragment StoreEntitySet="AssetSubType">
+                <ScalarProperty Name="AssetTypeID" ColumnName="AssetTypeID" />
+                <ScalarProperty Name="SubType" ColumnName="SubType" />
+                <ScalarProperty Name="ID" ColumnName="ID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="AssetTypes">
+            <EntityTypeMapping TypeName="VehicleSetupModel.AssetType">
+              <MappingFragment StoreEntitySet="AssetType">
+                <ScalarProperty Name="IsVehicle" ColumnName="IsVehicle" />
+                <ScalarProperty Name="Type" ColumnName="Type" />
+                <ScalarProperty Name="ID" ColumnName="ID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Attachments">
+            <EntityTypeMapping TypeName="VehicleSetupModel.Attachment">
+              <MappingFragment StoreEntitySet="Attachments">
+                <ScalarProperty Name="IsDefaultImage" ColumnName="IsDefaultImage" />
+                <ScalarProperty Name="Image" ColumnName="Image" />
+                <ScalarProperty Name="Path" ColumnName="Path" />
+                <ScalarProperty Name="Size" ColumnName="Size" />
+                <ScalarProperty Name="Extension" ColumnName="Extension" />
+                <ScalarProperty Name="Name" ColumnName="Name" />
+                <ScalarProperty Name="FleetNo" ColumnName="FleetNo" />
+                <ScalarProperty Name="ID" ColumnName="ID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Capacities">
+            <EntityTypeMapping TypeName="VehicleSetupModel.Capacity">
+              <MappingFragment StoreEntitySet="Capacity">
+                <ScalarProperty Name="AxelWeight3" ColumnName="AxelWeight3" />
+                <ScalarProperty Name="AxelWeight2" ColumnName="AxelWeight2" />
+                <ScalarProperty Name="AxelWeight1" ColumnName="AxelWeight1" />
+                <ScalarProperty Name="IsMainCapacity" ColumnName="IsMainCapacity" />
+                <ScalarProperty Name="GCM" ColumnName="GCM" />
+                <ScalarProperty Name="GVM" ColumnName="GVM" />
+                <ScalarProperty Name="Tare" ColumnName="Tare" />
+                <ScalarProperty Name="InternalLenght" ColumnName="InternalLenght" />
+                <ScalarProperty Name="InternalWidht" ColumnName="InternalWidht" />
+                <ScalarProperty Name="InternalHeight" ColumnName="InternalHeight" />
+                <ScalarProperty Name="CubicSpace" ColumnName="CubicSpace" />
+                <ScalarProperty Name="Spaces" ColumnName="Spaces" />
+                <ScalarProperty Name="Pallets" ColumnName="Pallets" />
+                <ScalarProperty Name="FleetNo" ColumnName="FleetNo" />
+                <ScalarProperty Name="ID" ColumnName="ID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Compliences">
+            <EntityTypeMapping TypeName="VehicleSetupModel.Complience">
+              <MappingFragment StoreEntitySet="Complience">
+                <ScalarProperty Name="AlertOperation" ColumnName="AlertOperation" />
+                <ScalarProperty Name="ExpiryDate" ColumnName="ExpiryDate" />
+                <ScalarProperty Name="ValidFromDate" ColumnName="ValidFromDate" />
+                <ScalarProperty Name="DateObtained" ColumnName="DateObtained" />
+                <ScalarProperty Name="LicenseNo" ColumnName="LicenseNo" />
+                <ScalarProperty Name="LicenceClass" ColumnName="LicenceClass" />
+                <ScalarProperty Name="SubTypeID" ColumnName="SubTypeID" />
+                <ScalarProperty Name="ComplienceTypeID" ColumnName="ComplienceTypeID" />
+                <ScalarProperty Name="FleetNo" ColumnName="FleetNo" />
+                <ScalarProperty Name="ID" ColumnName="ID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="ComplienceSubTypes">
+            <EntityTypeMapping TypeName="VehicleSetupModel.ComplienceSubType">
+              <MappingFragment StoreEntitySet="ComplienceSubType">
+                <ScalarProperty Name="Name" ColumnName="Name" />
+                <ScalarProperty Name="ID" ColumnName="ID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="ComplienceTypes">
+            <EntityTypeMapping TypeName="VehicleSetupModel.ComplienceType">
+              <MappingFragment StoreEntitySet="ComplienceType">
+                <ScalarProperty Name="Class" ColumnName="Class" />
+                <ScalarProperty Name="ID" ColumnName="ID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="FleetAssets">
+            <EntityTypeMapping TypeName="VehicleSetupModel.FleetAsset">
+              <MappingFragment StoreEntitySet="FleetAsset">
+                <ScalarProperty Name="FuelTypeID" ColumnName="FuelTypeID" />
+                <ScalarProperty Name="SubTypeID" ColumnName="SubTypeID" />
+                <ScalarProperty Name="TypeID" ColumnName="TypeID" />
+                <ScalarProperty Name="FleetAssetModelID" ColumnName="FleetAssetModelID" />
+                <ScalarProperty Name="FleetAssetMakeID" ColumnName="FleetAssetMakeID" />
+                <ScalarProperty Name="Description" ColumnName="Description" />
+                <ScalarProperty Name="Year" ColumnName="Year" />
+                <ScalarProperty Name="Depot" ColumnName="Depot" />
+                <ScalarProperty Name="RegistrationNo" ColumnName="RegistrationNo" />
+                <ScalarProperty Name="FleetNo" ColumnName="FleetNo" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="FleetAssetMakes">
+            <EntityTypeMapping TypeName="VehicleSetupModel.FleetAssetMake">
+              <MappingFragment StoreEntitySet="FleetAssetMake">
+                <ScalarProperty Name="Manufacturer" ColumnName="Manufacturer" />
+                <ScalarProperty Name="ID" ColumnName="ID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="FleetAssetModels">
+            <EntityTypeMapping TypeName="VehicleSetupModel.FleetAssetModel">
+              <MappingFragment StoreEntitySet="FleetAssetModel">
+                <ScalarProperty Name="FleetAssetMakeID" ColumnName="FleetAssetMakeID" />
+                <ScalarProperty Name="Name" ColumnName="Name" />
+                <ScalarProperty Name="ID" ColumnName="ID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="FuelTypes">
+            <EntityTypeMapping TypeName="VehicleSetupModel.FuelType">
+              <MappingFragment StoreEntitySet="FuelType">
+                <ScalarProperty Name="Fuel" ColumnName="Fuel" />
+                <ScalarProperty Name="ID" ColumnName="ID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="AspNetRoles">
+            <EntityTypeMapping TypeName="VehicleSetupModel.AspNetRole">
+              <MappingFragment StoreEntitySet="AspNetRoles">
+                <ScalarProperty Name="Name" ColumnName="Name" />
+                <ScalarProperty Name="Id" ColumnName="Id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="AspNetUserClaims">
+            <EntityTypeMapping TypeName="VehicleSetupModel.AspNetUserClaim">
+              <MappingFragment StoreEntitySet="AspNetUserClaims">
+                <ScalarProperty Name="ClaimValue" ColumnName="ClaimValue" />
+                <ScalarProperty Name="ClaimType" ColumnName="ClaimType" />
+                <ScalarProperty Name="UserId" ColumnName="UserId" />
+                <ScalarProperty Name="Id" ColumnName="Id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="AspNetUserLogins">
+            <EntityTypeMapping TypeName="VehicleSetupModel.AspNetUserLogin">
+              <MappingFragment StoreEntitySet="AspNetUserLogins">
+                <ScalarProperty Name="UserId" ColumnName="UserId" />
+                <ScalarProperty Name="ProviderKey" ColumnName="ProviderKey" />
+                <ScalarProperty Name="LoginProvider" ColumnName="LoginProvider" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="AspNetUsers">
+            <EntityTypeMapping TypeName="VehicleSetupModel.AspNetUser">
+              <MappingFragment StoreEntitySet="AspNetUsers">
+                <ScalarProperty Name="UserName" ColumnName="UserName" />
+                <ScalarProperty Name="AccessFailedCount" ColumnName="AccessFailedCount" />
+                <ScalarProperty Name="LockoutEnabled" ColumnName="LockoutEnabled" />
+                <ScalarProperty Name="LockoutEndDateUtc" ColumnName="LockoutEndDateUtc" />
+                <ScalarProperty Name="TwoFactorEnabled" ColumnName="TwoFactorEnabled" />
+                <ScalarProperty Name="PhoneNumberConfirmed" ColumnName="PhoneNumberConfirmed" />
+                <ScalarProperty Name="PhoneNumber" ColumnName="PhoneNumber" />
+                <ScalarProperty Name="SecurityStamp" ColumnName="SecurityStamp" />
+                <ScalarProperty Name="PasswordHash" ColumnName="PasswordHash" />
+                <ScalarProperty Name="EmailConfirmed" ColumnName="EmailConfirmed" />
+                <ScalarProperty Name="Email" ColumnName="Email" />
+                <ScalarProperty Name="Id" ColumnName="Id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <AssociationSetMapping Name="AspNetUserRoles" TypeName="VehicleSetupModel.AspNetUserRoles" StoreEntitySet="AspNetUserRoles">
+            <EndProperty Name="AspNetUser">
+              <ScalarProperty Name="Id" ColumnName="UserId" />
+            </EndProperty>
+            <EndProperty Name="AspNetRole">
+              <ScalarProperty Name="Id" ColumnName="RoleId" />
+            </EndProperty>
+          </AssociationSetMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="True" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="true" />
+        <DesignerProperty Name="UseLegacyProvider" Value="false" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="None" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>
